@@ -3,7 +3,6 @@ host = https://www.transifex.com
 
 [experimentalbeijing.plugin-experimentalbeijing]
 file_filter = languages/<lang>.po
-source_filter = languages/EBJ.pot
+source_file = languages/EBJ.pot
 source_lang = en
-minimum_perc = 10
 type = PO
