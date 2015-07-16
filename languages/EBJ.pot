@@ -1,0 +1,29 @@
+# Translations for the Experimental Beijing plugin for Omeka.
+# Copyright (C) 2015 University of Washington
+# This file is distributed under the same license as the
+# plugin-ExperimentalBeijing package.
+# Zach Ploskey <zach@ploskey.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ExperimentalBeijing Plugin\n"
+"Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
+"POT-Creation-Date: 2015-07-16 15:07-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Role types
+msgid "actor (performing artist)"
+msgstr ""
+
+msgid "architect"
+msgstr ""
+
+msgid "art director"
+msgstr ""
