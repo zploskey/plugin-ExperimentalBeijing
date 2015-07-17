@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2015-07-16 23:52+0000\n"
+"PO-Revision-Date: 2015-07-17 00:02+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/p/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -27,52 +27,52 @@ msgid "architect"
 msgstr "建筑师"
 
 msgid "art director"
-msgstr ""
+msgstr "艺术指导"
 
 msgid "artist (visual artist)"
-msgstr ""
+msgstr "艺术家"
 
 msgid "cinematographer"
-msgstr ""
+msgstr "电影摄影师"
 
 msgid "commercial artist"
-msgstr ""
+msgstr "商业艺术家"
 
 msgid "composer"
-msgstr ""
+msgstr "作曲家"
 
 msgid "digital artist"
-msgstr ""
+msgstr "数码艺术家"
 
 msgid "film director"
-msgstr ""
+msgstr "电影导演"
 
 msgid "film producer"
-msgstr ""
+msgstr "制片人"
 
 msgid "illustrator"
-msgstr ""
+msgstr "插画家"
 
 msgid "painter (artist)"
-msgstr ""
+msgstr "装置艺术家"
 
 msgid "performance artist"
-msgstr ""
+msgstr "行为艺术家"
 
 msgid "photographer"
-msgstr ""
+msgstr "摄影家"
 
 msgid "printmaker"
-msgstr ""
+msgstr "版画制作者"
 
 msgid "screen writer"
-msgstr ""
+msgstr "电影脚本作者"
 
 msgid "sculptor"
-msgstr ""
+msgstr "雕塑家"
 
 msgid "video artist"
-msgstr ""
+msgstr "录像艺术家"
 
 msgid "videographer"
-msgstr ""
+msgstr "录像师"
