@@ -49,6 +49,9 @@ msgstr ""
 msgid "film producer"
 msgstr ""
 
+msgid "installation artist"
+msgstr ""
+
 msgid "illustrator"
 msgstr ""
 
