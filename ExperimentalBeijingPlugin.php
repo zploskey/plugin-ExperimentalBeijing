@@ -14,7 +14,7 @@ class ExperimentalBeijing extends Omeka_Plugin_AbstractPlugin
     public function __construct()
     {
         parent::__construct();
-        $db = get_db();
+        $db = $this->_db;
         $this->prefix = $db->prefix . $this->_pluginPrefix;
     }
 
