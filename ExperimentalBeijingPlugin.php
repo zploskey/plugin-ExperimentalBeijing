@@ -2,8 +2,8 @@
 
 class ExperimentalBeijing extends Omeka_Plugin_AbstractPlugin
 {
-    protected $plugin_prefix = 'ebj_';
-    protected $prefix;
+    protected $_pluginPrefix = 'ebj_';
+    public $prefix;
 
     protected $_hooks = array(
         'install',
@@ -14,13 +14,13 @@ class ExperimentalBeijing extends Omeka_Plugin_AbstractPlugin
     public function __construct()
     {
         parent::__construct();
-        $this->prefix = $db->prefix . $this->plugin_prefix;
+        $db = get_db();
+        $this->prefix = $db->prefix . $this->_pluginPrefix;
     }
 
     public function hookInstall()
     {
         $db = $this->_db;
-
 //        $db->query("
 //            CREATE TABLE IF NOT EXISTS `{$this->prefix}work`"
 //        );
@@ -30,10 +30,9 @@ class ExperimentalBeijing extends Omeka_Plugin_AbstractPlugin
     {
         $db = $this->_db;
 //        $db->query("DROP TABLE IF EXISTS `{$this->prefix}work;");
-
     }
 
-    /*
+    /**
      * Insert our custom item types.
      */
     public function hookInitialize()
