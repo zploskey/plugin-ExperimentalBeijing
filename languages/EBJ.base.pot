@@ -17,3 +17,103 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# Role types
+msgid "actor (performing artist)"
+msgstr ""
+
+msgid "architect"
+msgstr ""
+
+msgid "art director"
+msgstr ""
+
+msgid "artist (visual artist)"
+msgstr ""
+
+msgid "cinematographer"
+msgstr ""
+
+msgid "commercial artist"
+msgstr ""
+
+msgid "composer"
+msgstr ""
+
+msgid "digital artist"
+msgstr ""
+
+msgid "film director"
+msgstr ""
+
+msgid "film producer"
+msgstr ""
+
+msgid "installation artist"
+msgstr ""
+
+msgid "illustrator"
+msgstr ""
+
+msgid "painter (artist)"
+msgstr ""
+
+msgid "performance artist"
+msgstr ""
+
+msgid "photographer"
+msgstr ""
+
+msgid "printmaker"
+msgstr ""
+
+msgid "screen writer"
+msgstr ""
+
+msgid "sculptor"
+msgstr ""
+
+msgid "video artist"
+msgstr ""
+
+msgid "videographer"
+msgstr ""
+
+msgid "Contributor"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Curator"
+msgstr ""
+
+msgid "Role of Creator"
+msgstr ""
+
+msgid "Role of Contributor"
+msgstr ""
+
+msgid "Cultural Context"
+msgstr ""
+
+msgid "Original Material"
+msgstr ""
+
+msgid "Original Measurements"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Current Location"
+msgstr ""
+
+msgid "Creation Location"
+msgstr ""
+
+msgid "Style/Period"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
