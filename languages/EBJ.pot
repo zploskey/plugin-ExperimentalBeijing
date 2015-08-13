@@ -78,3 +78,42 @@ msgstr ""
 
 msgid "videographer"
 msgstr ""
+
+msgid "Contributor"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Curator"
+msgstr ""
+
+msgid "Role of Creator"
+msgstr ""
+
+msgid "Role of Contributor"
+msgstr ""
+
+msgid "Cultural Context"
+msgstr ""
+
+msgid "Original Material"
+msgstr ""
+
+msgid "Original Measurements"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Current Location"
+msgstr ""
+
+msgid "Creation Location"
+msgstr ""
+
+msgid "Style/Period"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
