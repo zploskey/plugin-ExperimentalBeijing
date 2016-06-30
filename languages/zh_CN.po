@@ -41,8 +41,20 @@ msgstr "商业艺术家"
 msgid "composer"
 msgstr "作曲家"
 
+msgid "conceptual artist"
+msgstr "观点艺术家"
+
+msgid "dancer"
+msgstr "舞蹈家"
+
+msgid "diarist"
+msgstr "日记作者"
+
 msgid "digital artist"
 msgstr "数码艺术家"
+
+msgid "environmental artist"
+msgstr "环境艺术家"
 
 msgid "film director"
 msgstr "电影导演"

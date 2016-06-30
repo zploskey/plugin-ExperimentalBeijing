@@ -40,7 +40,19 @@ msgstr ""
 msgid "composer"
 msgstr ""
 
+msgid "conceptual artist"
+msgstr ""
+
+msgid "dancer"
+msgstr ""
+
+msgid "diarist"
+msgstr ""
+
 msgid "digital artist"
+msgstr ""
+
+msgid "environmental artist"
 msgstr ""
 
 msgid "film director"
