@@ -8,7 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExperimentalBeijing Plugin\n"
-"Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
+"Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/"
+"issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -89,4 +90,43 @@ msgid "video artist"
 msgstr ""
 
 msgid "videographer"
+msgstr ""
+
+msgid "Contributor"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Curator"
+msgstr ""
+
+msgid "Role of Creator"
+msgstr ""
+
+msgid "Role of Contributor"
+msgstr ""
+
+msgid "Cultural Context"
+msgstr ""
+
+msgid "Original Material"
+msgstr ""
+
+msgid "Original Measurements"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Current Location"
+msgstr ""
+
+msgid "Creation Location"
+msgstr ""
+
+msgid "Style/Period"
+msgstr ""
+
+msgid "Genre"
 msgstr ""
