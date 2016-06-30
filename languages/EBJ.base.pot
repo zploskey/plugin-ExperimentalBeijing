@@ -40,7 +40,19 @@ msgstr ""
 msgid "composer"
 msgstr ""
 
+msgid "conceptual artist"
+msgstr ""
+
+msgid "dancer"
+msgstr ""
+
+msgid "diarist"
+msgstr ""
+
 msgid "digital artist"
+msgstr ""
+
+msgid "environmental artist"
 msgstr ""
 
 msgid "film director"
@@ -79,12 +91,7 @@ msgstr ""
 msgid "videographer"
 msgstr ""
 
-msgid "Contributor"
-msgstr ""
-
-msgid "Creator"
-msgstr ""
-
+# Element types
 msgid "Curator"
 msgstr ""
 
@@ -103,9 +110,6 @@ msgstr ""
 msgid "Original Measurements"
 msgstr ""
 
-msgid "Language"
-msgstr ""
-
 msgid "Current Location"
 msgstr ""
 
@@ -116,4 +120,56 @@ msgid "Style/Period"
 msgstr ""
 
 msgid "Genre"
+msgstr ""
+
+# Original format
+msgid "advertisement"
+msgstr ""
+
+msgid "calligraphy"
+msgstr ""
+
+msgid "chair (furniture form)"
+msgstr ""
+
+msgid "collage"
+msgstr ""
+
+msgid "cut-paper work"
+msgstr ""
+
+msgid "digital art (visual work)"
+msgstr ""
+
+msgid "drawing"
+msgstr ""
+
+msgid "architectural drawing (visual work)"
+msgstr ""
+
+msgid "environmental art"
+msgstr ""
+
+msgid "fireworks (visual works)"
+msgstr ""
+
+msgid "installation (visual work)"
+msgstr ""
+
+msgid "motion picture (visual work)"
+msgstr ""
+
+msgid "painting (visual work)"
+msgstr ""
+
+msgid "acrylic painting (visual work)"
+msgstr ""
+
+msgid "mural painting (visual work)"
+msgstr ""
+
+msgid "oil painting (visual work)"
+msgstr ""
+
+msgid "watercolor (painting)"
 msgstr ""
