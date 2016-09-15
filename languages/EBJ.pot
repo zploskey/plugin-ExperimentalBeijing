@@ -127,10 +127,13 @@ msgstr ""
 msgid "advertisement"
 msgstr ""
 
+msgid "book cover"
+msgstr ""
+
 msgid "calligraphy"
 msgstr ""
 
-msgid "chair (furniture form)"
+msgid "chair"
 msgstr ""
 
 msgid "collage"
@@ -139,38 +142,71 @@ msgstr ""
 msgid "cut-paper work"
 msgstr ""
 
-msgid "digital art (visual work)"
+msgid "digital art"
 msgstr ""
 
 msgid "drawing"
 msgstr ""
 
-msgid "architectural drawing (visual work)"
+msgid "architectural drawing"
+msgstr ""
+
+msgid "architectural model"
 msgstr ""
 
 msgid "environmental art"
 msgstr ""
 
-msgid "fireworks (visual works)"
+msgid "fireworks"
 msgstr ""
 
-msgid "installation (visual work)"
+msgid "installation"
 msgstr ""
 
-msgid "motion picture (visual work)"
+msgid "motion picture"
 msgstr ""
 
-msgid "painting (visual work)"
+msgid "painting"
 msgstr ""
 
-msgid "acrylic painting (visual work)"
+msgid "acrylic painting"
 msgstr ""
 
-msgid "mural painting (visual work)"
+msgid "mural painting"
 msgstr ""
 
-msgid "oil painting (visual work)"
+msgid "oil painting"
 msgstr ""
 
-msgid "watercolor (painting)"
+msgid "watercolor"
+msgstr ""
+
+msgid "performance art"
+msgstr ""
+
+msgid "photograph"
+msgstr ""
+
+msgid "black-and-white photograph"
+msgstr ""
+
+msgid "color photograph"
+msgstr ""
+
+msgid "print"
+msgstr ""
+
+msgid "silkscreen print"
+msgstr ""
+
+msgid "sculpture"
+msgstr ""
+
+msgid "soft sculpture"
+msgstr ""
+
+msgid "video art"
+msgstr ""
+
+msgid "illustration"
 msgstr ""

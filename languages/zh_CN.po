@@ -130,8 +130,8 @@ msgstr "广告"
 msgid "calligraphy"
 msgstr "书法"
 
-msgid "chair (furniture form)"
-msgstr "椅子 (家具形式)"
+msgid "chair"
+msgstr "椅子"
 
 msgid "collage"
 msgstr "拼贴画 (视觉作品)"
@@ -139,40 +139,40 @@ msgstr "拼贴画 (视觉作品)"
 msgid "cut-paper work"
 msgstr "剪纸作品"
 
-msgid "digital art (visual work)"
-msgstr "数码艺术（视觉作品）"
+msgid "digital art"
+msgstr "数码艺术"
 
 msgid "drawing"
 msgstr "素描"
 
-msgid "architectural drawing (visual work)"
+msgid "architectural drawing"
 msgstr "建筑素描"
 
 msgid "environmental art"
 msgstr "环境艺术"
 
-msgid "fireworks (visual works)"
-msgstr "烟火（视觉作品）"
+msgid "fireworks"
+msgstr "烟火"
 
-msgid "installation (visual work)"
+msgid "installation"
 msgstr "装置艺术"
 
-msgid "motion picture (visual work)"
+msgid "motion picture"
 msgstr "电影"
 
-msgid "painting (visual work)"
-msgstr "绘画（视觉作品）"
+msgid "painting"
+msgstr "绘画"
 
-msgid "acrylic painting (visual work)"
-msgstr "丙烯酸画（视觉作品）"
+msgid "acrylic painting"
+msgstr "丙烯酸画"
 
-msgid "mural painting (visual work)"
-msgstr "壁画（视觉作品）"
+msgid "mural painting"
+msgstr "壁画"
 
-msgid "oil painting (visual work)"
-msgstr "油画（视觉作品）"
+msgid "oil painting"
+msgstr "油画"
 
-msgid "watercolor (painting)"
+msgid "watercolor"
 msgstr "水彩画"
 
 msgid "performance art"
@@ -187,13 +187,13 @@ msgstr "黑白照片"
 msgid "color photograph"
 msgstr "彩色照片"
 
-msgid "print (visual work)"
+msgid "print"
 msgstr "版画"
 
 msgid "silkscreen print"
 msgstr "绢印版画"
 
-msgid "sculpture (visual work)"
+msgid "sculpture"
 msgstr "雕塑"
 
 msgid "soft sculpture"
