@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 # Role types
-msgid "actor (performing artist)"
+msgid "actor"
 msgstr "演员"
 
 msgid "architect"
@@ -30,7 +30,7 @@ msgstr "建筑师"
 msgid "art director"
 msgstr "艺术指导"
 
-msgid "artist (visual artist)"
+msgid "artist"
 msgstr "艺术家"
 
 msgid "cinematographer"
@@ -69,7 +69,7 @@ msgstr "装置艺术家"
 msgid "illustrator"
 msgstr "插画家"
 
-msgid "painter (artist)"
+msgid "painter"
 msgstr "画家"
 
 msgid "performance artist"
@@ -134,7 +134,7 @@ msgid "chair"
 msgstr "椅子"
 
 msgid "collage"
-msgstr "拼贴画 (视觉作品)"
+msgstr "拼贴画"
 
 msgid "cut-paper work"
 msgstr "剪纸作品"
@@ -172,7 +172,7 @@ msgstr "壁画"
 msgid "oil painting"
 msgstr "油画"
 
-msgid "watercolor"
+msgid "watercolor (painting)"
 msgstr "水彩画"
 
 msgid "performance art"

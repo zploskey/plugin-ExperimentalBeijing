@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # Role types
-msgid "actor (performing artist)"
+msgid "actor"
 msgstr ""
 
 msgid "architect"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "art director"
 msgstr ""
 
-msgid "artist (visual artist)"
+msgid "artist"
 msgstr ""
 
 msgid "cinematographer"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "illustrator"
 msgstr ""
 
-msgid "painter (artist)"
+msgid "painter"
 msgstr ""
 
 msgid "performance artist"
@@ -177,7 +177,7 @@ msgstr ""
 msgid "oil painting"
 msgstr ""
 
-msgid "watercolor"
+msgid "watercolor (painting)"
 msgstr ""
 
 msgid "performance art"
