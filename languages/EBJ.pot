@@ -32,6 +32,9 @@ msgstr ""
 msgid "artist"
 msgstr ""
 
+msgid "choreographer"
+msgstr ""
+
 msgid "cinematographer"
 msgstr ""
 
