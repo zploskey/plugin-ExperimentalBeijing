@@ -84,7 +84,7 @@ msgstr "摄影家"
 msgid "printmaker"
 msgstr "版画制作者"
 
-msgid "screen writer"
+msgid "screenwriter"
 msgstr "电影脚本作者"
 
 msgid "sculptor"

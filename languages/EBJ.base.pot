@@ -82,7 +82,7 @@ msgstr ""
 msgid "printmaker"
 msgstr ""
 
-msgid "screen writer"
+msgid "screenwriter"
 msgstr ""
 
 msgid "sculptor"
