@@ -114,6 +114,9 @@ msgstr ""
 msgid "Original Measurements"
 msgstr ""
 
+msgid "Original Format"
+msgstr ""
+
 msgid "Current Location"
 msgstr ""
 

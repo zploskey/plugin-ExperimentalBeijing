@@ -113,6 +113,9 @@ msgstr ""
 msgid "Original Measurements"
 msgstr ""
 
+msgid "Original Format"
+msgstr ""
+
 msgid "Current Location"
 msgstr ""
 
@@ -126,6 +129,7 @@ msgid "Genre"
 msgstr ""
 
 # Original format
+
 msgid "advertisement"
 msgstr ""
 
@@ -212,6 +216,3 @@ msgstr ""
 
 msgid "illustration"
 msgstr ""
-
-# Original Material
-
