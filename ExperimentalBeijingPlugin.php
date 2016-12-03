@@ -30,7 +30,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $nav[] = array(
             'label' => 'Language',
-            'uri' => current_url(),
+            'uri' => url('/'),
             'pages' => array(
                 array('label' => '中文',
                       'uri' => current_url(array('lang' => 'zh_CN'))),
