@@ -18,12 +18,22 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'public_navigation_main',
     );
 
+    protected $_translatedTexts = array(
+        'Original Format',
+        'Original Material',
+        'Original Measurements',
+    );
+
     /**
      * Initialize translations.
      */
     public function hookInitialize()
     {
         add_translation_source(dirname(__FILE__) . '/languages');
+        foreach ($this->_translatedTexts as $tt) {
+            add_filter(
+                array('Display', 'Item', 'Item Type Metadata', $tt), '__');
+        }
     }
 
     public function filterPublicNavigationMain($nav)
