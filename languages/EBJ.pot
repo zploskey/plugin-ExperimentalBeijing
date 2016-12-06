@@ -96,7 +96,16 @@ msgid "videographer"
 msgstr ""
 
 # Element types
+msgid "Birth Date"
+msgstr ""
+
+msgid "Culture"
+msgstr ""
+
 msgid "Curator"
+msgstr ""
+
+msgid "Death Date"
 msgstr ""
 
 msgid "Role of Creator"
