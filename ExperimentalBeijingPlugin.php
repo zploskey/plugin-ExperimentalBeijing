@@ -21,7 +21,8 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     protected $_translatedTexts = array(
         'Original Format',
         'Original Material',
-        'Original Measurements',
+        'Role of Creator',
+        'Role of Contributor',
     );
 
     /**
