@@ -16,6 +16,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'public_navigation_main',
+        'search_form_default_query_type',
     );
 
     protected $_translatedTexts = array(
@@ -50,6 +51,14 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             ),
         );
         return $nav;
+    }
+
+    /**
+     * Set the default query type to exact match.
+     */
+    public function filterSearchFormDefaultQueryType($type)
+    {
+        return 'exact_match';
     }
 
 }
