@@ -40,16 +40,29 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     public function filterPublicNavigationMain($nav)
     {
-        $nav[] = array(
-            'label' => 'Language',
-            'uri' => url('/'),
-            'pages' => array(
-                array('label' => '中文',
-                      'uri' => current_url(array('lang' => 'zh_CN'))),
-                array('label' => 'English',
-                      'uri' => current_url(array('lang' => 'en_US'))),
+        $additionalNav = array(
+            'zh_CN' => array(
+                'label' => '中文',
+                'uri'   => current_url(array('lang' => 'zh_CN')),
+                'class' => 'lang-select',
             ),
+            'en_US' => array(
+                'label' => 'ENG',
+                'uri'   => current_url(array('lang' => 'en_US')),
+                'class' => 'lang-select',
+            )
         );
+        $langCodes = array_keys($additionalNav);
+        $session = new Zend_Session_Namespace;
+        if (isset($session->lang) AND in_array($session->lang, $langCodes)) {
+            $selectedLang = $session->lang;
+        } else {
+            $selectedLang = 'en_US';
+        }
+        $additionalNav[$selectedLang]['class'] .= ' selected';
+        foreach ($additionalNav as $addNav) {
+            $nav[] = $addNav;
+        }
         return $nav;
     }
 
