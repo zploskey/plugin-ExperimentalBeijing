@@ -2,7 +2,7 @@
 # Copyright (C) 2015 University of Washington
 # This file is distributed under the same license as the
 # plugin-ExperimentalBeijing package.
-# 
+#
 # Translators:
 # Can Zhao <zhaocan@uw.edu>, 2015
 # Zach Ploskey <zach@ploskey.com>, 2015-2016
@@ -113,6 +113,9 @@ msgstr "材料"
 
 msgid "Original Measurements"
 msgstr "原始尺寸"
+
+msgid "Original Format"
+msgstr "原始格式"
 
 msgid "Current Location"
 msgstr "现在地"
