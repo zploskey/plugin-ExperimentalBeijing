@@ -15,6 +15,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'public_navigation_main',
+        'search_element_texts',
         'search_form_default_query_type',
         'search_form_default_action',
         'search_form',
@@ -72,6 +73,37 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             $nav[] = $addNav;
         }
         return $nav;
+    }
+
+    /**
+     * Add translated text to search text used in site searches.
+     *
+     * @param ElementText[] $elementTexts argument array
+     * @return array
+     */
+    public function filterSearchElementTexts($elementTexts)
+    {
+        $db = get_db();
+        $translations = $db->getTable('MultilanguageTranslation');
+        $sql = "SELECT locale_code FROM omeka_multilanguage_translations
+                GROUP BY locale_code";
+        $locales = $db->query($sql)->fetchAll();
+        //die(print_r($locales));
+        foreach ($elementTexts as $et) {
+            foreach ($locales as $localeRow) {
+                $locale = $localeRow['locale_code'];
+                $text = $et->getText();
+                $translated = __($text);
+                if ($text == $translated) {
+                    // no translation available, look up in Multilanguage table
+                    $translated = $translations->getTranslation($et->record_id,
+                        $et->record_type, $et->element_id, $locale, $text);
+                    $translated = $translated->translation;
+                }
+                $et->setText($text . " $translated");
+            }
+        }
+        return $elementTexts;
     }
 
     /**
