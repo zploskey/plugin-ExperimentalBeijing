@@ -85,22 +85,27 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $db = get_db();
         $translations = $db->getTable('MultilanguageTranslation');
-        $sql = "SELECT locale_code FROM omeka_multilanguage_translations
+        $sql = "SELECT locale_code FROM $db->MultilanguageTranslations
                 GROUP BY locale_code";
-        $locales = $db->query($sql)->fetchAll();
-        //die(print_r($locales));
+        $locales = $db->fetchCol($sql);
         foreach ($elementTexts as $et) {
-            foreach ($locales as $localeRow) {
-                $locale = $localeRow['locale_code'];
+            foreach ($locales as $locale) {
                 $text = $et->getText();
-                $translated = __($text);
-                if ($text == $translated) {
-                    // no translation available, look up in Multilanguage table
-                    $translated = $translations->getTranslation($et->record_id,
-                        $et->record_type, $et->element_id, $locale, $text);
-                    $translated = $translated->translation;
+                $translationRecord = $translations->getTranslation(
+                    $et->record_id, $et->record_type, $et->element_id,
+                    $locale, $text
+                );
+                if ($translationRecord) {
+                    $translation = $translationRecord->translation;
+                } else {
+                    $translation = '';
                 }
-                $et->setText($text . " $translated");
+                if (!$translation) {
+                    $translation = __($text);
+                }
+                if ($text != $translation) {
+                    $et->setText("$text $translation");
+                }
             }
         }
         return $elementTexts;
