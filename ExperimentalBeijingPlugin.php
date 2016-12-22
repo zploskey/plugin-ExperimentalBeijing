@@ -78,6 +78,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     /**
      * Add translated text to search text used in site searches.
      *
+     * This is done by temporarily adding the translations to the end of the
+     * element text before the afterSave hook calls addSearchText on them.
+     *
      * @param ElementText[] $elementTexts argument array
      * @return array
      */
