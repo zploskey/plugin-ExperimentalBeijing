@@ -18,6 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# Site title
+msgid "Experimental Beijing"
+msgstr ""
+
 # Navigation links
 msgid "Archive"
 msgstr ""

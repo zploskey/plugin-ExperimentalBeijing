@@ -2,16 +2,17 @@
 # Copyright (C) 2015 University of Washington
 # This file is distributed under the same license as the
 # plugin-ExperimentalBeijing package.
-#
+# 
 # Translators:
 # Can Zhao <zhaocan@uw.edu>, 2015
+# Christina Yuen Zi Chung <cyuenzi@uw.edu>, 2017
 # Zach Ploskey <zach@ploskey.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2016-06-30 05:32+0000\n"
+"PO-Revision-Date: 2017-07-07 22:16+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +20,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+# Site title
+msgid "Experimental Beijing"
+msgstr ""
+
+# Navigation links
+msgid "Archive"
+msgstr ""
+
+msgid "People"
+msgstr ""
 
 # Role types
 msgid "actor"
@@ -96,8 +108,18 @@ msgstr "录像艺术家"
 msgid "videographer"
 msgstr "录像师"
 
+# Element types
+msgid "Birth Date"
+msgstr "出生日期"
+
+msgid "Culture"
+msgstr ""
+
 msgid "Curator"
 msgstr "策划人"
+
+msgid "Death Date"
+msgstr ""
 
 msgid "Role of Creator"
 msgstr "创建者角色"
@@ -133,6 +155,9 @@ msgstr "流派"
 msgid "advertisement"
 msgstr "广告"
 
+msgid "book cover"
+msgstr ""
+
 msgid "calligraphy"
 msgstr "书法"
 
@@ -153,6 +178,9 @@ msgstr "素描"
 
 msgid "architectural drawing"
 msgstr "建筑素描"
+
+msgid "architectural model"
+msgstr ""
 
 msgid "environmental art"
 msgstr "环境艺术"
@@ -207,3 +235,6 @@ msgstr "软雕塑"
 
 msgid "video art"
 msgstr "录像艺术"
+
+msgid "illustration"
+msgstr ""
