@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-07-07 22:16+0000\n"
+"PO-Revision-Date: 2017-07-19 05:51+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -23,14 +23,18 @@ msgstr ""
 
 # Site title
 msgid "Experimental Beijing"
+msgstr "实验北京"
+
+# Site sub-title
+msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
 # Navigation links
 msgid "Archive"
-msgstr ""
+msgstr "文献库"
 
 msgid "People"
-msgstr ""
+msgstr "人物"
 
 # Role types
 msgid "actor"
@@ -58,7 +62,7 @@ msgid "composer"
 msgstr "作曲家"
 
 msgid "conceptual artist"
-msgstr "观点艺术家"
+msgstr "观念艺术家"
 
 msgid "dancer"
 msgstr "舞蹈家"
@@ -94,10 +98,10 @@ msgid "photographer"
 msgstr "摄影家"
 
 msgid "printmaker"
-msgstr "版画制作者"
+msgstr "版画家"
 
 msgid "screenwriter"
-msgstr "电影脚本作者"
+msgstr "电影编剧"
 
 msgid "sculptor"
 msgstr "雕塑家"
@@ -113,37 +117,37 @@ msgid "Birth Date"
 msgstr "出生日期"
 
 msgid "Culture"
-msgstr ""
+msgstr "文化"
 
 msgid "Curator"
 msgstr "策划人"
 
 msgid "Death Date"
-msgstr ""
+msgstr "去世日期"
 
 msgid "Role of Creator"
-msgstr "创建者角色"
+msgstr "创造者角色"
 
 msgid "Role of Contributor"
-msgstr "其他责任人角色"
+msgstr "其他参与者角色"
 
 msgid "Cultural Context"
-msgstr "文化背景"
+msgstr "文化景况"
 
 msgid "Original Material"
-msgstr "材料"
+msgstr "原材"
 
 msgid "Original Measurements"
-msgstr "原始尺寸"
+msgstr "原本尺寸"
 
 msgid "Original Format"
-msgstr "原始格式"
+msgstr "原本格式"
 
 msgid "Current Location"
-msgstr "现在地"
+msgstr "当前位置"
 
 msgid "Creation Location"
-msgstr "创建所在地"
+msgstr "創造的地點"
 
 msgid "Style/Period"
 msgstr "风格/时期"
@@ -156,7 +160,7 @@ msgid "advertisement"
 msgstr "广告"
 
 msgid "book cover"
-msgstr ""
+msgstr "书籍封面"
 
 msgid "calligraphy"
 msgstr "书法"
@@ -180,7 +184,7 @@ msgid "architectural drawing"
 msgstr "建筑素描"
 
 msgid "architectural model"
-msgstr ""
+msgstr "建筑模型"
 
 msgid "environmental art"
 msgstr "环境艺术"
@@ -198,7 +202,7 @@ msgid "painting"
 msgstr "绘画"
 
 msgid "acrylic painting"
-msgstr "丙烯酸画"
+msgstr "丙烯画"
 
 msgid "mural painting"
 msgstr "壁画"
@@ -225,7 +229,7 @@ msgid "print"
 msgstr "版画"
 
 msgid "silkscreen print"
-msgstr "绢印版画"
+msgstr "丝网印刷"
 
 msgid "sculpture"
 msgstr "雕塑"
@@ -237,4 +241,8 @@ msgid "video art"
 msgstr "录像艺术"
 
 msgid "illustration"
+msgstr "插图"
+
+# theme strings
+msgid "role"
 msgstr ""

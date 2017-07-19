@@ -22,6 +22,10 @@ msgstr ""
 msgid "Experimental Beijing"
 msgstr ""
 
+# Site sub-title
+msgid "Gender & Globalization in Chinese Contemporary Art"
+msgstr ""
+
 # Navigation links
 msgid "Archive"
 msgstr ""
@@ -236,4 +240,8 @@ msgid "video art"
 msgstr ""
 
 msgid "illustration"
+msgstr ""
+
+# theme strings
+msgid "role"
 msgstr ""
