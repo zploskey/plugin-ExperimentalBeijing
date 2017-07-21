@@ -27,10 +27,13 @@ msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
 # Navigation links
-msgid "Archive"
+msgid "Images"
 msgstr ""
 
 msgid "People"
+msgstr ""
+
+msgid "Chapters"
 msgstr ""
 
 # Role types

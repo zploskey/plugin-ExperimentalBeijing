@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-07-19 05:51+0000\n"
+"PO-Revision-Date: 2017-07-21 22:48+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -27,14 +27,17 @@ msgstr "实验北京"
 
 # Site sub-title
 msgid "Gender & Globalization in Chinese Contemporary Art"
-msgstr ""
+msgstr "中国当代艺术中的性别与全球化"
 
 # Navigation links
-msgid "Archive"
-msgstr "文献库"
+msgid "Images"
+msgstr ""
 
 msgid "People"
 msgstr "人物"
+
+msgid "Chapters"
+msgstr ""
 
 # Role types
 msgid "actor"
@@ -110,7 +113,7 @@ msgid "video artist"
 msgstr "录像艺术家"
 
 msgid "videographer"
-msgstr "录像师"
+msgstr "视频摄影师"
 
 # Element types
 msgid "Birth Date"
@@ -245,4 +248,4 @@ msgstr "插图"
 
 # theme strings
 msgid "role"
-msgstr ""
+msgstr "角色"
