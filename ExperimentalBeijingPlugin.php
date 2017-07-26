@@ -4,6 +4,10 @@
  * Extensions for the Experimental Beijing project.
  */
 
+define('EXPERIMENTAL_BEIJING_DIR', dirname(__FILE__));
+
+require_once(EXPERIMENTAL_BEIJING_DIR . '/helpers/tags.php');
+
 /**
  * Experimental Beijing plugin main class.
  */
