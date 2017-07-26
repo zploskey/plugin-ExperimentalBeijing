@@ -156,6 +156,9 @@ msgstr ""
 msgid "Genre"
 msgstr ""
 
+msgid "Gender"
+msgstr ""
+
 # Original format
 msgid "advertisement"
 msgstr ""
@@ -246,4 +249,17 @@ msgstr ""
 
 # theme strings
 msgid "role"
+msgstr ""
+
+# Gender common element texts
+msgid "male"
+msgstr ""
+
+msgid "female"
+msgstr ""
+
+msgid "other"
+msgstr ""
+
+msgid "transgender"
 msgstr ""
