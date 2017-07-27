@@ -15,6 +15,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'initialize',
+        'public_head',
     );
 
     protected $_filters = array(
@@ -30,11 +31,75 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'Role of Contributor',
     );
 
+    protected $_locales = array(
+        'en_US',
+        'zh_CN',
+    );
+
+    protected $_defaultLang = 'en_US';
+
+    protected $_lang = null;
+
+    protected function _processLanguageSelection()
+    {
+        $session = new Zend_Session_Namespace;
+        if (isset($session->lang) AND in_array($session->lang, $this->_locales)) {
+            $this->_lang = $session->lang;
+        } else {
+            $this->_lang = $this->_defaultLang;
+        }
+    }
+
+    public function getLang()
+    {
+        return $this->_lang;
+    }
+
+    /**
+     * If on a simple page or exhibit adjust the URL according to
+     * the convention that pages and exhibits end in '-zh_cn' on Chinese
+     * language pages.
+     */
+    protected function _langRedirect()
+    {
+        $cur_url = $new_url = current_url();
+        if ($cur_url != CURRENT_BASE_URL . '/') {
+            if ($this->_lang == $this->_defaultLang) {
+                $new_url = preg_replace('/(.*)-zh_cn(.*)/i', '\1\2', $cur_url);
+            } else {
+                $page = get_current_record('simple_pages_page', false);
+                if ($page) {
+                    $sp_slug = metadata('simple_pages_page', 'slug');
+                    if ($sp_slug && ! preg_match('/-zh_cn$/i', $sp_slug)) {
+                        $new_url = $cur_url . '-zh_cn';
+                    }
+                }
+
+                $exhibit = get_current_record('exhibit', false);
+                if ($exhibit && ! preg_match('/-zh_cn/i', $exhibit->slug)) {
+                    $new_url = preg_replace('|(exhibits/show/)([^/.]*)|',
+                                            '\1\2-zh_cn', $cur_url);
+                }
+            }
+        }
+
+        if ($new_url !== $cur_url) {
+            $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
+            $redirector->setPrependBase(false)->goToUrl($new_url);
+        }
+    }
+
+    public function hookPublicHead($args)
+    {
+        $this->_langRedirect();
+    }
+
     /**
      * Initialize translations.
      */
     public function hookInitialize()
     {
+        $this->_processLanguageSelection();
         add_translation_source(dirname(__FILE__) . '/languages');
         foreach ($this->_translatedTexts as $tt) {
             add_filter(
@@ -63,13 +128,8 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
                 'class' => 'lang-select',
             )
         );
-        $langCodes = array_keys($additionalNav);
-        $session = new Zend_Session_Namespace;
-        if (isset($session->lang) AND in_array($session->lang, $langCodes)) {
-            $selectedLang = $session->lang;
-        } else {
-            $selectedLang = 'en_US';
-        }
+
+        $selectedLang = $this->getLang();
         $additionalNav[$selectedLang]['class'] .= ' selected';
         foreach ($additionalNav as $addNav) {
             $nav[] = $addNav;
