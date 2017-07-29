@@ -89,9 +89,64 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
     }
 
+    protected function _retrieveWorks($args)
+    {
+        $view = get_view();
+        $vars = $view->getVars();
+        if (! isset($vars['item'])) {
+            return;
+        }
+        $item = $vars['item'];
+        $item_type = $item->getProperty('item_type_name');
+
+        if (! in_array($item_type, array('Person', 'Series'))) {
+            return;
+        }
+
+        $db = get_db();
+
+        // Fetch the item title
+        $params = array(
+            'record_id' => $item->id,
+            'element_type' => 'Title',
+        );
+        $titleElementText = $db->getTable('ElementText')->findBy($params, 1);
+
+        if (! $titleElementText) {
+            return;
+        }
+
+        $title = $titleElementText[0]->text;
+
+        // Fetch works related to this item
+        $itemTable = $db->getTable('Item');
+        $select = $itemTable->getSelect();
+        $select->joinInner(array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id', '');
+        $select->joinInner(array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id', array('elements.name'));
+        $select->joinInner(array('item_types' => $db->ItemTypes),
+            'items.item_type_id = item_types.id', '');
+
+        if ($item_type == 'Person') {
+            $select->where('elements.name IN ("Creator", "Contributor")');
+            $select->where('element_texts.text = ?', $title);
+        }
+
+        if ($item_type == 'Series') {
+            $select->where("elements.name = 'Is Part Of'");
+        }
+
+        $select->where('element_texts.text = ?', $title);
+        $select->where('item_types.name IN ("Still Image", "Moving Image")');
+        $works = $itemTable->fetchObjects($select);
+        get_view()->works = $works;
+    }
+
     public function hookPublicHead($args)
     {
         $this->_langRedirect();
+        $this->_retrieveWorks($args);
     }
 
     /**
