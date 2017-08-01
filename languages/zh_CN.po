@@ -31,7 +31,7 @@ msgstr "中国当代艺术中的性别与全球化"
 
 # language switch
 msgid "中文"
-msgstr ""
+msgstr "ENG"
 
 msgid "zh-CN"
 msgstr "en-US"
