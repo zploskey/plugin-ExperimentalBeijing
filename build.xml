@@ -67,6 +67,7 @@
 
     <target name="build-mo" description="Build the MO translation files.">
         <apply executable="msgfmt" dest="${lang.dir}" verbose="true">
+            <arg value="--no-hash"/>
             <arg value="-o"/>
             <targetfile />
             <srcfile />
