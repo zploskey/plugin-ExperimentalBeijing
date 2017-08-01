@@ -119,25 +119,36 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Fetch works related to this item
         $itemTable = $db->getTable('Item');
+        $sub = $db->select();
+        $sub->from(array('items' => $db->Items), array('id'));
+        $sub->joinInner(array('element_texts' => $db->ElementTexts),
+            "element_texts.record_id = items.id", '');
+        $sub->joinInner(array('elements' => $db->Elements),
+            "element_texts.element_id = elements.id", '');
+        $sub->joinInner(array('item_types' => $db->ItemTypes),
+            'items.item_type_id = item_types.id', '');
+
+        if ($item_type == 'Person') {
+            $sub->where('elements.name IN ("Creator", "Contributor")');
+        }
+
+        if ($item_type == 'Series') {
+            $sub->where("elements.name = 'Is Part Of'");
+        }
+
+        $sub->where('element_texts.text = ?', $title);
+        $sub->where('item_types.name IN ("Still Image", "Moving Image", "Series")');
+        $sub->group('items.id');
+
         $select = $itemTable->getSelect();
         $select->joinInner(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
         $select->joinInner(array('elements' => $db->Elements),
-            'element_texts.element_id = elements.id', array('elements.name'));
-        $select->joinInner(array('item_types' => $db->ItemTypes),
-            'items.item_type_id = item_types.id', '');
+            'element_texts.element_id = elements.id', '');
+        $select->where('elements.name = "Date Created"
+                        AND element_texts.record_id IN ?', $sub);
+        $select->order('element_texts.text ASC');
 
-        if ($item_type == 'Person') {
-            $select->where('elements.name IN ("Creator", "Contributor")');
-            $select->where('element_texts.text = ?', $title);
-        }
-
-        if ($item_type == 'Series') {
-            $select->where("elements.name = 'Is Part Of'");
-        }
-
-        $select->where('element_texts.text = ?', $title);
-        $select->where('item_types.name IN ("Still Image", "Moving Image")');
         $works = $itemTable->fetchObjects($select);
         get_view()->works = $works;
     }
