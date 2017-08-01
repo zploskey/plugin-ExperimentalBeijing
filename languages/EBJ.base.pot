@@ -26,6 +26,16 @@ msgstr ""
 msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
+# language switch
+msgid "中文"
+msgstr ""
+
+msgid "zh-CN"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
 # Navigation links
 msgid "Images"
 msgstr ""
