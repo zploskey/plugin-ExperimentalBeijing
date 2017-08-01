@@ -34,7 +34,7 @@ msgid "中文"
 msgstr ""
 
 msgid "zh-CN"
-msgstr ""
+msgstr "en-US"
 
 msgid "Menu"
 msgstr ""
