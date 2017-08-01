@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-01 12:00+0000\n"
+"PO-Revision-Date: 2017-08-01 21:15+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -30,12 +30,15 @@ msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr "中国当代艺术中的性别与全球化"
 
 # language switch
+#: themes/experimental-beijing/common/header.php:74
 msgid "中文"
 msgstr "ENG"
 
+#: themes/experimental-beijing/common/header.php:73
 msgid "zh-CN"
 msgstr "en-US"
 
+#: themes/experimental-beijing/common/header.php:78
 msgid "Menu"
 msgstr ""
 
@@ -46,6 +49,7 @@ msgstr "图像库"
 msgid "People"
 msgstr "人物"
 
+#: themes/experimental-beijing/exhibit-builder/exhibits/browse.php:2
 msgid "Chapters"
 msgstr "书本章节"
 
@@ -154,7 +158,7 @@ msgid "Original Measurements"
 msgstr "原本尺寸"
 
 msgid "Original Format"
-msgstr "原本格式"
+msgstr "原本格式"
 
 msgid "Current Location"
 msgstr "当前位置"
@@ -260,9 +264,11 @@ msgid "illustration"
 msgstr "插图"
 
 # theme strings
+#: themes/experimental-beijing/items/show.php:98
 msgid "role"
 msgstr "角色"
 
+#: themes/experimental-beijing/items/show.php:155
 msgid "Works"
 msgstr ""
 
@@ -277,4 +283,16 @@ msgid "other"
 msgstr ""
 
 msgid "transgender"
+msgstr ""
+
+#: themes/experimental-beijing/items/browse.php:20
+msgid "Date Created"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:128
+msgid "Keywords"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:206
+msgid "More Info"
 msgstr ""

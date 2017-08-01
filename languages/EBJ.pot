@@ -28,12 +28,15 @@ msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
 # language switch
+#: themes/experimental-beijing/common/header.php:74
 msgid "中文"
 msgstr ""
 
+#: themes/experimental-beijing/common/header.php:73
 msgid "zh-CN"
 msgstr ""
 
+#: themes/experimental-beijing/common/header.php:78
 msgid "Menu"
 msgstr ""
 
@@ -44,6 +47,7 @@ msgstr ""
 msgid "People"
 msgstr ""
 
+#: themes/experimental-beijing/exhibit-builder/exhibits/browse.php:2
 msgid "Chapters"
 msgstr ""
 
@@ -258,9 +262,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
+#: themes/experimental-beijing/items/show.php:98
 msgid "role"
 msgstr ""
 
+#: themes/experimental-beijing/items/show.php:155
 msgid "Works"
 msgstr ""
 
@@ -275,4 +281,16 @@ msgid "other"
 msgstr ""
 
 msgid "transgender"
+msgstr ""
+
+#: themes/experimental-beijing/items/browse.php:20
+msgid "Date Created"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:128
+msgid "Keywords"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:206
+msgid "More Info"
 msgstr ""
