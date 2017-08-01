@@ -19,7 +19,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_filters = array(
-        'public_navigation_main',
         'search_element_texts',
         'search_form_default_query_type',
     );
@@ -160,36 +159,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             add_filter(
                 array('Display', 'Item', 'Item Type Metadata', $tt), '__');
         }
-    }
-
-    /**
-     * Add language English/Chinese language switching to navbar.
-     * Gets current language from session and sets it as selected.
-     * Defaults to 'en_US' locale.
-     * @param Omeka_Navigation_Page_Mvc $nav
-     * @return Omeka_Navigation_Page_Mvc $nav
-     */
-    public function filterPublicNavigationMain($nav)
-    {
-        $additionalNav = array(
-            'zh_CN' => array(
-                'label' => '中文',
-                'uri'   => current_url(array('lang' => 'zh_CN')),
-                'class' => 'lang-select',
-            ),
-            'en_US' => array(
-                'label' => 'ENG',
-                'uri'   => current_url(array('lang' => 'en_US')),
-                'class' => 'lang-select',
-            )
-        );
-
-        $selectedLang = $this->getLang();
-        $additionalNav[$selectedLang]['class'] .= ' selected';
-        foreach ($additionalNav as $addNav) {
-            $nav[] = $addNav;
-        }
-        return $nav;
     }
 
     /**
