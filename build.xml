@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="plugin-ExperimentalBeijing" basedir=".">
+    <property name="base.dir" location="." />
+    <property name="omeka.dir" location="../.." />
     <property name="lang.dir" location="languages" />
-    <property name="core.pot" location="../../application/languages/Omeka.pot" />
+    <property name="core.pot" location="${omeka.dir}/application/languages/Omeka.pot" />
+    <property name="exhibitbuilder.pot" location="${omeka.dir}/plugins/ExhibitBuilder/languages/template.pot" />
     <property name="dist" location="dist"/>
 
     <target name="dist" description="Create the dist directory.">
@@ -31,28 +34,32 @@
     <target name="update-pot" description="Update the translation template.">
         <property name="pot.file" location="${lang.dir}/EBJ.pot"/>
         <property name="pot.base" location="${lang.dir}/EBJ.base.pot"/>
-        <tempfile property="pot.temp" suffix=".pot"/>
-        <tempfile property="pot.duplicates" suffix="-duplicates.pot" />
+        <tempfile property="pot.temp" suffix=".pot" destdir="${lang.dir}"/>
+        <tempfile property="pot.duplicates" suffix="-duplicates.pot" destdir="${lang.dir}"/>
         <copy file="${pot.base}" tofile="${pot.temp}"/>
-        <apply executable="xgettext" relative="true" parallel="true" verbose="true">
+        <apply executable="xgettext" parallel="true" verbose="true">
             <arg value="--language=php"/>
             <arg value="--from-code=utf-8"/>
             <arg value="--keyword=__"/>
+            <arg value="--keyword=plural:1,2"/>
             <arg value="--flag=__:1:pass-php-format"/>
             <arg value="--add-comments=/"/>
             <arg value="--omit-header"/>
             <arg value="--join-existing"/>
             <arg value="-o"/>
             <arg file="${pot.temp}"/>
-            <fileset dir="." includes="**/*.php **/*.phtml"
-                excludes="tests/"/>
+            <fileset dir="${omeka.dir}" includes="
+                plugins/ExperimentalBeijing/**/*.php
+                themes/experimental-beijing/**/*.php"/>
         </apply>
         <exec executable="msgcomm">
             <arg value="--omit-header" />
+            <arg value="--force-po" />
             <arg value="-o" />
             <arg file="${pot.duplicates}" />
             <arg file="${pot.temp}" />
             <arg file="${core.pot}" />
+            <arg file="${exhibitbuilder.pot}" />
         </exec>
         <exec executable="msgcomm">
             <arg value="--unique" />
@@ -60,6 +67,16 @@
             <arg file="${pot.temp}" />
             <arg file="${pot.temp}" />
             <arg file="${pot.duplicates}" />
+        </exec>
+        <exec executable="sed">
+            <arg value="-i" />
+            <arg value="s|${omeka.dir}/plugins/ExperimentalBeijing/||g" />
+            <arg value="${pot.temp}" />
+        </exec>
+        <exec executable="sed">
+            <arg value="-i" />
+            <arg value="s|${omeka.dir}/||g" />
+            <arg value="${pot.temp}" />
         </exec>
         <move file="${pot.temp}" tofile="${pot.file}"/>
         <delete file="${pot.duplicates}" quiet="true" />
