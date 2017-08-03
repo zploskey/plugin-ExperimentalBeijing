@@ -92,4 +92,18 @@
             <mapper type="glob" from="*.po" to="*.mo"/>
         </apply>
     </target>
+
+    <target name="transifex" description="Sync with transifex">
+        <exec executable="tx">
+            <arg value="push"/>
+            <arg value="-s"/>
+        </exec>
+        <exec executable="tx">
+            <arg value="pull"/>
+        </exec>
+    </target>
+
+    <target name="update-translations" depends="update-pot,transifex,build-mo"
+        description="Update pot, sync with transifex, and build mo files.">
+    </target>
 </project>
