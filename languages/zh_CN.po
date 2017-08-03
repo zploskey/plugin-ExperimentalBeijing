@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-01 21:15+0000\n"
-"Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
+"PO-Revision-Date: 2017-08-02 17:38+0000\n"
+"Last-Translator: Christina Yuen Zi Chung <cyuenzi@uw.edu>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgstr "en-US"
 
 #: themes/experimental-beijing/common/header.php:78
 msgid "Menu"
-msgstr ""
+msgstr "导航菜单"
 
 # Navigation links
 msgid "Images"
@@ -173,7 +173,7 @@ msgid "Genre"
 msgstr "流派"
 
 msgid "Gender"
-msgstr ""
+msgstr "性别"
 
 # Original format
 msgid "advertisement"
@@ -270,29 +270,29 @@ msgstr "角色"
 
 #: themes/experimental-beijing/items/show.php:155
 msgid "Works"
-msgstr ""
+msgstr "作品"
 
 # Gender common element texts
 msgid "male"
-msgstr ""
+msgstr "男"
 
 msgid "female"
-msgstr ""
+msgstr "女"
 
 msgid "other"
-msgstr ""
+msgstr "其他"
 
 msgid "transgender"
-msgstr ""
+msgstr "跨性别"
 
 #: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
-msgstr ""
+msgstr "创造日期"
 
 #: themes/experimental-beijing/items/show.php:128
 msgid "Keywords"
-msgstr ""
+msgstr "关键字"
 
 #: themes/experimental-beijing/items/show.php:206
 msgid "More Info"
-msgstr ""
+msgstr "更多信息"
