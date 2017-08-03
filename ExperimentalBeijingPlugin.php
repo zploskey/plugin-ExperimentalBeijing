@@ -119,37 +119,37 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Fetch works related to this item
         $itemTable = $db->getTable('Item');
-        $sub = $db->select();
-        $sub->from(array('items' => $db->Items), array('id'));
-        $sub->joinInner(array('element_texts' => $db->ElementTexts),
-            "element_texts.record_id = items.id", '');
-        $sub->joinInner(array('elements' => $db->Elements),
-            "element_texts.element_id = elements.id", '');
-        $sub->joinInner(array('item_types' => $db->ItemTypes),
-            'items.item_type_id = item_types.id', '');
+
+        $its = $itemTable->getSelect();
+        $its->joinInner(array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id', '');
+        $its->joinInner(array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id', '');
 
         if ($item_type == 'Person') {
-            $sub->where('elements.name IN ("Creator", "Contributor")');
+            $its->where('elements.name IN ("Creator", "Contributor")');
         }
 
         if ($item_type == 'Series') {
-            $sub->where("elements.name = 'Is Part Of'");
+            $its->where('elements.name = "Is Part Of"');
         }
 
-        $sub->where('element_texts.text = ?', $title);
-        $sub->where('item_types.name IN ("Still Image", "Moving Image", "Series")');
-        $sub->group('items.id');
+        $its->where('element_texts.text = ?', $title);
 
-        $select = $itemTable->getSelect();
-        $select->joinInner(array('element_texts' => $db->ElementTexts),
+        $dates = $db->select();
+        $dates->from(array('items' => $db->Items),
+            array('id', 'dates_created' => 'element_texts.text'));
+        $dates->joinInner(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $select->joinInner(array('elements' => $db->Elements),
+        $dates->joinInner(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
-        $select->where('elements.name = "Date Created"
-                        AND element_texts.record_id IN ?', $sub);
-        $select->order('element_texts.text ASC');
+        $dates->where('elements.name = "Date Created"');
 
-        $works = $itemTable->fetchObjects($select);
+        $its->joinLeft(array('dates' => $dates), 'dates.id = items.id', '');
+        $its->group('items.id');
+        $its->order('dates.dates_created ASC');
+
+        $works = $itemTable->fetchObjects($its);
         get_view()->works = $works;
     }
 
