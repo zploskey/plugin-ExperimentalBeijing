@@ -15,7 +15,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'initialize',
+        'public_collections_show',
         'public_head',
+        'public_items_show',
     );
 
     protected $_filters = array(
@@ -88,27 +90,29 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
     }
 
-    protected function _retrieveWorks($args)
+    public function hookPublicItemsShow($args)
     {
-        $view = get_view();
-        $vars = $view->getVars();
-        if (! isset($vars['item'])) {
+        $view = $args['view'];
+
+        if (! isset($view->item)) {
             return;
         }
-        $item = $vars['item'];
+
+        $item = $view->item;
         $item_type = $item->getProperty('item_type_name');
 
         if (! in_array($item_type, array('Person', 'Series'))) {
             return;
         }
 
+        // Fetch the item title
         $db = get_db();
 
-        // Fetch the item title
         $params = array(
             'record_id' => $item->id,
             'element_type' => 'Title',
         );
+
         $titleElementText = $db->getTable('ElementText')->findBy($params, 1);
 
         if (! $titleElementText) {
@@ -150,13 +154,12 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $its->order('dates.dates_created ASC');
 
         $works = $itemTable->fetchObjects($its);
-        get_view()->works = $works;
+        $view->works = $works;
     }
 
     public function hookPublicHead($args)
     {
         $this->_langRedirect();
-        $this->_retrieveWorks($args);
     }
 
     /**
@@ -170,6 +173,49 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             add_filter(
                 array('Display', 'Item', 'Item Type Metadata', $tt), '__');
         }
+    }
+
+    /**
+     * Add count of related works for each Person to the view.
+     */
+    public function hookPublicCollectionsShow($args)
+    {
+        $itemIds = array();
+        foreach (loop('items') as $item) {
+            $itemIds[] = $item->id;
+        }
+
+        $db = get_db();
+        $person = $db->select()->from(array('items' => $db->Item),
+            array('person_id' => 'items.id', 'person_name' => 'element_texts.text'));
+        $person->joinInner(array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id', '');
+        $person->joinInner(array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id', '');
+        $person->where('items.id IN (?)', $itemIds);
+        $person->where('elements.name = "Title"');
+        $person->where('items.public = 1');
+
+        $select = $db->select();
+        $select->from(array('items' => $db->Item), '');
+        $select->from(array('person' => $person),
+            array('id' => 'person.person_id', 'works_count' => 'COUNT(*)'));
+        $select->joinInner(array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id', '');
+        $select->joinInner(array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id', '');
+        $select->where('elements.name IN ("Creator", "Contributor")');
+        $select->where('element_texts.text = person.person_name');
+        $person->where('items.public = 1');
+        $select->group('person.person_id');
+        $rows = $db->fetchAll($select);
+
+        $counts = array();
+        foreach ($rows as $row) {
+            $counts[$row['id']] = $row['works_count'];
+        }
+
+        $args['view']->counts = $counts;
     }
 
     /**
