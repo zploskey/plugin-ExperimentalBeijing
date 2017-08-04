@@ -126,9 +126,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $itemTable = $db->getTable('Item');
 
         $its = $itemTable->getSelect();
-        $its->joinInner(array('element_texts' => $db->ElementTexts),
+        $its->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $its->joinInner(array('elements' => $db->Elements),
+        $its->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
 
         if ($item_type == 'Person') {
@@ -144,9 +144,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $dates = $db->select();
         $dates->from(array('items' => $db->Items),
             array('id', 'dates_created' => 'element_texts.text'));
-        $dates->joinInner(array('element_texts' => $db->ElementTexts),
+        $dates->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $dates->joinInner(array('elements' => $db->Elements),
+        $dates->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
         $dates->where('elements.name = "Date Created"');
 
@@ -194,9 +194,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $db = get_db();
         $person = $db->select()->from(array('items' => $db->Item),
             array('person_id' => 'items.id', 'person_name' => 'element_texts.text'));
-        $person->joinInner(array('element_texts' => $db->ElementTexts),
+        $person->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $person->joinInner(array('elements' => $db->Elements),
+        $person->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
         $person->where('items.id IN (?)', $itemIds);
         $person->where('elements.name = "Title"');
@@ -206,9 +206,9 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $select->from(array('items' => $db->Item), '');
         $select->from(array('person' => $person),
             array('id' => 'person.person_id', 'works_count' => 'COUNT(*)'));
-        $select->joinInner(array('element_texts' => $db->ElementTexts),
+        $select->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $select->joinInner(array('elements' => $db->Elements),
+        $select->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
         $select->where('elements.name IN ("Creator", "Contributor")');
         $select->where('element_texts.text = person.person_name');
