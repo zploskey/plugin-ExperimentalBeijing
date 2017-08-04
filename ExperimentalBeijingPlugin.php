@@ -185,6 +185,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             $itemIds[] = $item->id;
         }
 
+        // TODO: return if not People page
+        if (!$itemIds) {
+            return;
+        }
+
         $db = get_db();
         $person = $db->select()->from(array('items' => $db->Item),
             array('person_id' => 'items.id', 'person_name' => 'element_texts.text'));
@@ -206,7 +211,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             'element_texts.element_id = elements.id', '');
         $select->where('elements.name IN ("Creator", "Contributor")');
         $select->where('element_texts.text = person.person_name');
-        $person->where('items.public = 1');
+        $select->where('items.public = 1');
         $select->group('person.person_id');
         $rows = $db->fetchAll($select);
 
