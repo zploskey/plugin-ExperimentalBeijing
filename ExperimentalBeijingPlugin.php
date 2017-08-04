@@ -21,6 +21,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_filters = array(
+        'items_browse_params',
         'search_element_texts',
         'search_form_default_query_type',
     );
@@ -260,6 +261,16 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             }
         }
         return $elementTexts;
+    }
+
+    public function filterItemsBrowseParams($params)
+    {
+        if (! isset($params['collection'])) {
+            return;
+        }
+
+        $params['sort_field'] = 'Item Type Metadata,Last Name';
+        return $params;
     }
 
     /**
