@@ -266,7 +266,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterItemsBrowseParams($params)
     {
         if (! isset($params['collection'])) {
-            return;
+            return $params;
         }
 
         $params['sort_field'] = 'Item Type Metadata,Last Name';
