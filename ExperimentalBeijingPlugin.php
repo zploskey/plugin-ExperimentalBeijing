@@ -21,6 +21,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_filters = array(
+        'items_browse_default_sort',
         'items_browse_params',
         'search_element_texts',
         'search_form_default_query_type',
@@ -237,6 +238,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterSearchElementTexts($elementTexts)
     {
         $db = get_db();
+        // todo just get from ContentLanguages instead
         $translations = $db->getTable('MultilanguageTranslation');
         $sql = "SELECT locale_code FROM $db->MultilanguageTranslations
                 GROUP BY locale_code";
@@ -264,6 +266,23 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         return $elementTexts;
     }
 
+    /**
+     * Sort Item browsing results by Title by default.
+     *
+     * @param Array $sortArray
+     * @return Array
+     */
+    public function filterItemsBrowseDefaultSort($sortArray)
+    {
+        return array('Dublin Core,Title', 'ASC');
+    }
+
+    /**
+     * Change collections/show browse query to sort by Last Name.
+     *
+     * @param Array $params
+     * @return Array
+     */
     public function filterItemsBrowseParams($params)
     {
         if (! isset($params['collection'])) {
@@ -281,4 +300,5 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         return 'exact_match';
     }
+
 }
