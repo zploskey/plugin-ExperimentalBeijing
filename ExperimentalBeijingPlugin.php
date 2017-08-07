@@ -21,7 +21,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_filters = array(
-        'locale',
         'items_browse_default_sort',
         'items_browse_params',
         'search_element_texts',
@@ -36,48 +35,16 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'Role of Contributor',
     );
 
-    protected $_locales = array(
-        'en_US',
-        'zh_CN',
-    );
-
-    protected $_lang = null;
-
     /**
      * Initialize translations.
      */
     public function hookInitialize()
     {
-        $this->_processLanguageSelection();
         add_translation_source(dirname(__FILE__) . '/languages');
         foreach ($this->_translatedTexts as $tt) {
             add_filter(
                 array('Display', 'Item', 'Item Type Metadata', $tt), '__');
         }
-    }
-
-    protected function _processLanguageSelection()
-    {
-        $session = new Zend_Session_Namespace;
-        if (isset($_GET['lang']) && in_array($_GET['lang'], $this->_locales)) {
-            $session->lang = $_GET['lang'];
-            $this->_lang = $_GET['lang'];
-        } else if (isset($session->lang)) {
-            $this->_lang = $session->lang;
-        }
-    }
-
-    public function getLang()
-    {
-        if (! isset($this->_lang)) {
-            $this->_processLanguageSelection();
-        }
-        return $this->_lang;
-    }
-
-    public function filterLocale($locale)
-    {
-        return ($selectedLang = $this->getLang()) ? $selectedLang : $locale;
     }
 
     /**
@@ -89,9 +56,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     */
     protected function _langRedirect()
     {
+        $session = new Zend_Session_Namespace;
+        $lang = $session->lang;
         $cur_url = $new_url = current_url();
         if ($cur_url != CURRENT_BASE_URL . '/') {
-            if ($this->_lang == $this->_locales[0]) {
+            if ($lang !== 'zh_CN') {
                 $new_url = preg_replace('/(.*)-zh_cn(.*)/i', '\1\2', $cur_url);
             } else {
                 $page = get_current_record('simple_pages_page', false);
