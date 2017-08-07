@@ -15,6 +15,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'initialize',
+        'items_browse_sql',
         'public_collections_show',
         'public_head',
         'public_items_show',
@@ -270,6 +271,31 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
         $params['sort_field'] = 'Item Type Metadata,Last Name';
         return $params;
+    }
+
+    /**
+     * Order by Titles with certain tags and characters removed.
+     *
+     * @param Array $args
+     * @return void
+     */
+    public function hookItemsBrowseSql($args)
+    {
+        $select = $args['select'];
+        $params = $args['params'];
+        if ($params['sort_field'] === 'Dublin Core,Title') {
+            $orders = $select->getPart('order');
+            $orders[1][0] = new Zend_Db_Expr(
+                "REPLACE(REPLACE(REPLACE(et_sort.text,
+                    '<i>', ''),
+                    '<em>', ''),
+                    '“', '')"
+            );
+            $select->reset('order');
+            foreach ($orders as $order) {
+                $select->order($order[0].' '.$order[1]);
+            }
+        }
     }
 
     /**
