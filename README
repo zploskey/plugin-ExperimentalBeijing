@@ -1,1 +1,5 @@
-Experimental Beijing
+Experimental Beijing plugin for Omeka
+-------------------------------------
+
+Requires plugins Dublin Core Extended, AdminImages, and a fork of the
+Multilanguage plugin found at https://github.com/zploskey/Multilanguage.
