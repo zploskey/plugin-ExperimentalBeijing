@@ -1,6 +1,6 @@
 <?php
 
-function is_eng() {
+function ebj_is_eng() {
     $session = new Zend_Session_Namespace;
     if (isset($session->lang)) {
         $is_eng = ($session->lang != 'zh_CN');
@@ -18,16 +18,12 @@ function locale_filtered_tags($recordOrTags) {
         $tags = explode(', ', $tagstring);
     }
 
-    define('IS_ENG', is_eng());
+    $isEng = ebj_is_eng();
 
-    $tags = array_filter($tags, function ($utf8_str) {
+    $tags = array_filter($tags, function ($utf8_str) use ($isEng) {
         $pattern = "/\p{Han}+/u";
         $match = preg_match($pattern, $utf8_str);
-        if (IS_ENG) {
-            return ! $match;
-        } else {
-            return $match;
-        }
+        return $isEng ? !$match : $match;
     });
     return $tags;
 }
