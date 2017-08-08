@@ -277,3 +277,13 @@ msgstr ""
 
 msgid "transgender"
 msgstr ""
+
+# Language controlled vocabulary
+msgid "Chinese"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Mandarin"
+msgstr ""

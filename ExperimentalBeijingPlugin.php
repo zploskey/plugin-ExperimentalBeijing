@@ -31,6 +31,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_translatedTexts = array(
         'Gender',
+        'Language',
         'Original Format',
         'Original Material',
         'Role of Creator',

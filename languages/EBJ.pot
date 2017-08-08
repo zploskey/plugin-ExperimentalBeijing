@@ -283,6 +283,16 @@ msgstr ""
 msgid "transgender"
 msgstr ""
 
+# Language controlled vocabulary
+msgid "Chinese"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Mandarin"
+msgstr ""
+
 #: themes/experimental-beijing/collections/show.php:29
 #, php-format
 msgid "%d ITEM"
