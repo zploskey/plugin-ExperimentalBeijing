@@ -18,6 +18,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'items_browse_sql',
         'public_collections_show',
         'public_head',
+        'public_home',
         'public_items_show',
     );
 
@@ -84,6 +85,18 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
             $redirector->setPrependBase(false)->goToUrl($new_url);
         }
+    }
+
+    public function hookPublicHome($args)
+    {
+        $view = $args['view'];
+        $config = array(
+            'record_type' => 'AdminImage',
+            'showtitles' => 'true',
+            //'ids' => '1-2',
+        );
+        $carousel = ShortcodeCarouselPlugin::carousel($config, $view);
+        echo $carousel;
     }
 
     public function hookPublicItemsShow($args)
@@ -303,7 +316,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             return;
         }
 
-        if ($params['sort_field'] === 'Dublin Core,Title') {
+        if (isset($params['sort_field']) && $params['sort_field'] === 'Dublin Core,Title') {
             $orders = $select->getPart('order');
             $orders[1][0] = new Zend_Db_Expr(
                 "REPLACE(REPLACE(REPLACE(et_sort.text,
