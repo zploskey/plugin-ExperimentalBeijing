@@ -23,6 +23,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'items_browse_default_sort',
+        'public_navigation_items',
         'search_element_texts',
         'search_form_default_query_type',
     );
@@ -222,8 +223,23 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     }
 
     /**
-     * Add translated text to search text used in site searches.
+     * Remove items/search link from items/browse.
      *
+     * @param Array $navArray
+     * @return Array
+     */
+    function filterPublicNavigationItems($navArray)
+    {
+        for ($i = 0; $i < count($navArray); $i++) {
+            if (preg_match('|items/search$|', $navArray[$i]['uri'])) {
+                unset($navArray[$i]);
+            }
+        }
+        return $navArray;
+    }
+
+    /**
+     * Add translated text to search text used in site searches.
      * This is done by temporarily adding the translations to the end of the
      * element text before the afterSave hook calls addSearchText on them.
      *
@@ -273,7 +289,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     }
 
     /**
-     * Order by Titles with certain tags and characters removed.
+     * Order by Titles with certain html tags and characters removed.
      *
      * @param Array $args
      * @return void
