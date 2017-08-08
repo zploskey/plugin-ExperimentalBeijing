@@ -285,8 +285,10 @@ msgstr ""
 
 #: themes/experimental-beijing/collections/show.php:29
 #, php-format
-msgid "%s ITEMS"
-msgstr ""
+msgid "%d ITEM"
+msgid_plural "%d ITEMS"
+msgstr[0] ""
+msgstr[1] ""
 
 #: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"

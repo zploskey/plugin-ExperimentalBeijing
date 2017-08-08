@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-08 04:35+0000\n"
+"PO-Revision-Date: 2017-08-08 15:55+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -287,8 +287,9 @@ msgstr "跨性别"
 
 #: themes/experimental-beijing/collections/show.php:29
 #, php-format
-msgid "%s ITEMS"
-msgstr ""
+msgid "%d ITEM"
+msgid_plural "%d ITEMS"
+msgstr[0] ""
 
 #: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
