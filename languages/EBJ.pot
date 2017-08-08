@@ -262,11 +262,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:98
+#: themes/experimental-beijing/items/show.php:100
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:155
+#: themes/experimental-beijing/items/show.php:157
 msgid "Works"
 msgstr ""
 
@@ -283,14 +283,19 @@ msgstr ""
 msgid "transgender"
 msgstr ""
 
+#: themes/experimental-beijing/collections/show.php:29
+#, php-format
+msgid "%s ITEMS"
+msgstr ""
+
 #: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:128
+#: themes/experimental-beijing/items/show.php:130
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:206
+#: themes/experimental-beijing/items/show.php:208
 msgid "More Info"
 msgstr ""
