@@ -102,7 +102,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         // Fetch the item title
-        $db = get_db();
+        $db = $this->_db;
 
         $params = array(
             'record_id' => $item->id,
@@ -173,16 +173,26 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             return;
         }
 
-        $db = get_db();
+        $db = $this->_db;
+        $lastNameId = $db->getTable('Element')
+            ->findByElementSetNameAndElementName(
+                'Item Type Metadata', 'Last Name'
+            )->id;
+
         $person = $db->select()->from(array('items' => $db->Item),
-            array('person_id' => 'items.id', 'person_name' => 'element_texts.text'));
+            array('person_id' => 'items.id',
+                  'person_name' => 'element_texts.text'));
         $person->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
         $person->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
+        $person->joinLeft(array('et_sort' => $db->ElementTexts),
+            "et_sort.record_id = items.id
+             AND et_sort.record_id = $lastNameId", '');
         $person->where('items.id IN (?)', $itemIds);
         $person->where('elements.name = "Title"');
         $person->where('items.public = 1');
+        $person->order('et_sort.text ASC');
 
         $works = $db->select();
         $works->from(array('items' => $db->Item), '');
@@ -223,7 +233,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
      */
     public function filterSearchElementTexts($elementTexts)
     {
-        $db = get_db();
+        $db = $this->_db;
         // todo just get from ContentLanguages instead
         $translations = $db->getTable('MultilanguageTranslation');
         $sql = "SELECT locale_code FROM $db->MultilanguageTranslations
@@ -261,22 +271,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterItemsBrowseDefaultSort($sortArray)
     {
         return array('Dublin Core,Title', 'ASC');
-    }
-
-    /**
-     * Change collections/show browse query to sort by Last Name.
-     *
-     * @param Array $params
-     * @return Array
-     */
-    public function filterItemsBrowseParams($params)
-    {
-        if (! isset($params['collection'])) {
-            return $params;
-        }
-
-        $params['sort_field'] = 'Item Type Metadata,Last Name';
-        return $params;
     }
 
     /**
