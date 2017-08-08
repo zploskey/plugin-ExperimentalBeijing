@@ -169,7 +169,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         // TODO: return if not People page
-        if (!$itemIds) {
+        if (! $itemIds) {
             return;
         }
 
@@ -184,18 +184,24 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $person->where('elements.name = "Title"');
         $person->where('items.public = 1');
 
-        $select = $db->select();
-        $select->from(array('items' => $db->Item), '');
-        $select->from(array('person' => $person),
-            array('id' => 'person.person_id', 'works_count' => 'COUNT(*)'));
-        $select->joinLeft(array('element_texts' => $db->ElementTexts),
+        $works = $db->select();
+        $works->from(array('items' => $db->Item), '');
+        $works->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
-        $select->joinLeft(array('elements' => $db->Elements),
+        $works->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
-        $select->where('elements.name IN ("Creator", "Contributor")');
-        $select->where('element_texts.text = person.person_name');
-        $select->where('items.public = 1');
-        $select->group('person.person_id');
+        $works->joinInner(array('person' => $person),
+            'person.person_name = element_texts.text',
+            array('person_id' => 'person.person_id'));
+        $works->where('elements.name IN ("Creator", "Contributor")');
+        $works->where('items.public = 1');
+        $works->group('element_texts.record_id');
+
+        $select = $db->select()->from(array('items' => $db->Item), '');
+        $select->joinInner(array('w' => $works),
+            'w.person_id = items.id',
+            array('id' => 'w.person_id', 'works_count' => 'COUNT(*)'));
+        $select->group('items.id');
         $rows = $db->fetchAll($select);
 
         $counts = array();
@@ -283,6 +289,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $select = $args['select'];
         $params = $args['params'];
+
+        if (isset($params['collection'])) {
+            return;
+        }
+
         if ($params['sort_field'] === 'Dublin Core,Title') {
             $orders = $select->getPart('order');
             $orders[1][0] = new Zend_Db_Expr(
