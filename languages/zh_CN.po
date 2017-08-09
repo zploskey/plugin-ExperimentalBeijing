@@ -298,7 +298,7 @@ msgstr ""
 #: views/public/index/home_about.php:3
 msgid ""
 "<em>Experimental Beijing: Gender and Globalization in Chinese Contemporary\n"
-"Art</em>is a book by Sasha Su-Ling Welland, published by Duke University Press\n"
+"Art</em> is a book by Sasha Su-Ling Welland, published by Duke University Press\n"
 "in 2018. Grounded in ethnographic and visual interpretation, it examines the\n"
 "interlocking power dynamics involved in Chinese contemporary art as a global\n"
 "phenomenon at the turning point of the early twenty-first century. A focus on\n"
