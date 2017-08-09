@@ -98,6 +98,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         );
         $carousel = ShortcodeCarouselPlugin::carousel($config, $view);
         echo $carousel;
+        echo $view->partial('index/home_about.php');
     }
 
     public function hookPublicItemsShow($args)
