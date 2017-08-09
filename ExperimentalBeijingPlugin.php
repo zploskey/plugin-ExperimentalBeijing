@@ -189,11 +189,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         $db = $this->_db;
-        $lastNameId = $db->getTable('Element')
-            ->findByElementSetNameAndElementName(
-                'Item Type Metadata', 'Last Name'
-            )->id;
-
         $person = $db->select()->from(array('items' => $db->Item),
             array('person_id' => 'items.id',
                   'person_name' => 'element_texts.text'));
@@ -203,30 +198,30 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             'element_texts.element_id = elements.id', '');
         $person->joinLeft(array('et_sort' => $db->ElementTexts),
             "et_sort.record_id = items.id
-             AND et_sort.record_id = $lastNameId", '');
+             AND elements.name = 'Last Name'", '');
         $person->where('items.id IN (?)', $itemIds);
         $person->where('elements.name = "Title"');
         $person->where('items.public = 1');
         $person->order('et_sort.text ASC');
 
         $works = $db->select();
-        $works->from(array('items' => $db->Item), '');
+        $works->from(array('items' => $db->Item), array('person.person_id'));
         $works->joinLeft(array('element_texts' => $db->ElementTexts),
             'element_texts.record_id = items.id', '');
         $works->joinLeft(array('elements' => $db->Elements),
             'element_texts.element_id = elements.id', '');
         $works->joinInner(array('person' => $person),
-            'person.person_name = element_texts.text',
-            array('person_id' => 'person.person_id'));
+            'person.person_name = element_texts.text', '');
         $works->where('elements.name IN ("Creator", "Contributor")');
         $works->where('items.public = 1');
-        $works->group('element_texts.record_id');
+        $works->group(array('record_id', 'person_id'));
 
-        $select = $db->select()->from(array('items' => $db->Item), '');
-        $select->joinInner(array('w' => $works),
-            'w.person_id = items.id',
+        $select = $db->select()
+            ->from(array('items' => $db->Item), '');
+        $select->joinInner(array('w' => $works), 'w.person_id = items.id',
             array('id' => 'w.person_id', 'works_count' => 'COUNT(*)'));
-        $select->group('items.id');
+        $select->group('id');
+
         $rows = $db->fetchAll($select);
 
         $counts = array();
