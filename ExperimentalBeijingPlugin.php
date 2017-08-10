@@ -24,6 +24,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'items_browse_default_sort',
+        'items_browse_params',
         'public_navigation_items',
         'search_element_texts',
         'search_form_default_query_type',
@@ -189,39 +190,32 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         $db = $this->_db;
-        $person = $db->select()->from(array('items' => $db->Item),
-            array('person_id' => 'items.id',
-                  'person_name' => 'element_texts.text'));
-        $person->joinLeft(array('element_texts' => $db->ElementTexts),
-            'element_texts.record_id = items.id', '');
-        $person->joinLeft(array('elements' => $db->Elements),
-            'element_texts.element_id = elements.id', '');
-        $person->joinLeft(array('et_sort' => $db->ElementTexts),
-            "et_sort.record_id = items.id
-             AND elements.name = 'Last Name'", '');
-        $person->where('items.id IN (?)', $itemIds);
-        $person->where('elements.name = "Title"');
-        $person->where('items.public = 1');
-        $person->order('et_sort.text ASC');
+        $nameEls = array('Creator', 'Contributor');
+        $ccIds = array();
+        foreach ($nameEls as $element) {
+            $ccIds[$element] = $db->getTable('Element')
+                ->findByElementSetNameAndElementName('Dublin Core', $element)
+                ->id;
+        }
 
-        $works = $db->select();
-        $works->from(array('items' => $db->Item), array('person.person_id'));
-        $works->joinLeft(array('element_texts' => $db->ElementTexts),
-            'element_texts.record_id = items.id', '');
-        $works->joinLeft(array('elements' => $db->Elements),
-            'element_texts.element_id = elements.id', '');
-        $works->joinInner(array('person' => $person),
-            'person.person_name = element_texts.text', '');
-        $works->where('elements.name IN ("Creator", "Contributor")');
-        $works->where('items.public = 1');
-        $works->group(array('record_id', 'person_id'));
+        $itemTable = $db->getTable('Item');
+        $person = $itemTable->getSelect();
+        $person->reset('columns');
+        $person->columns('id', 'items');
+        $person->joinLeft(array('name' => $db->ElementTexts),
+            'items.id = name.record_id', '');
+        $person->joinInner(
+            array('et_cc' => $db->ElementText),
+            "et_cc.element_id IN ({$ccIds["Creator"]}, {$ccIds["Contributor"]})
+             AND et_cc.record_type = 'Item' AND et_cc.text = name.text", '');
+        $person->where('items.id IN (?)', $itemIds);
+        $person->group(array('items.id', 'et_cc.record_id'));
 
         $select = $db->select()
             ->from(array('items' => $db->Item), '');
-        $select->joinInner(array('w' => $works), 'w.person_id = items.id',
-            array('id' => 'w.person_id', 'works_count' => 'COUNT(*)'));
+        $select->joinInner(array('p' => $person), 'p.id = items.id',
+            array('p.id', 'works_count' => 'COUNT(*)'));
         $select->group('id');
-
         $rows = $db->fetchAll($select);
 
         $counts = array();
@@ -230,6 +224,22 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         $args['view']->counts = $counts;
+    }
+
+    /**
+     * Change collections/show browse query to sort by Last Name.
+     *
+     * @param Array $params
+     * @return Array
+     */
+    public function filterItemsBrowseParams($params)
+    {
+        if (! isset($params['collection'])) {
+            return $params;
+        }
+
+        $params['sort_field'] = 'Item Type Metadata,Last Name';
+        return $params;
     }
 
     /**
