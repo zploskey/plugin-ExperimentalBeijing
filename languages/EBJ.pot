@@ -27,6 +27,13 @@ msgstr ""
 msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
+# Item Types
+msgid "Still Image"
+msgstr ""
+
+msgid "Moving Image"
+msgstr ""
+
 # language switch
 #: themes/experimental-beijing/common/header.php:74
 msgid "中文"

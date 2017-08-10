@@ -26,6 +26,13 @@ msgstr ""
 msgid "Gender & Globalization in Chinese Contemporary Art"
 msgstr ""
 
+# Item Types
+msgid "Still Image"
+msgstr ""
+
+msgid "Moving Image"
+msgstr ""
+
 # language switch
 msgid "中文"
 msgstr ""
