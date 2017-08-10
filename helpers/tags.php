@@ -1,6 +1,7 @@
 <?php
 
-function ebj_is_eng() {
+function ebj_is_eng()
+{
     $session = new Zend_Session_Namespace;
     if (isset($session->lang)) {
         $is_eng = ($session->lang != 'zh_CN');
@@ -10,7 +11,8 @@ function ebj_is_eng() {
     return $is_eng;
 }
 
-function locale_filtered_tags($recordOrTags) {
+function locale_filtered_tags($recordOrTags)
+{
     if (is_array($recordOrTags)) {
         $tags = $recordOrTags;
     } elseif (is_string($recordOrTags)) {
@@ -28,7 +30,8 @@ function locale_filtered_tags($recordOrTags) {
     return $tags;
 }
 
-function locale_filtered_tag_string($recordOrTags) {
+function locale_filtered_tag_string($recordOrTags)
+{
     $tagstring = implode(', ', locale_filtered_tags($recordOrTags));
     return $tagstring;
 }

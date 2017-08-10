@@ -3,10 +3,9 @@
 /**
  * Extensions for the Experimental Beijing project.
  */
-
 define('EXPERIMENTAL_BEIJING_DIR', dirname(__FILE__));
 
-require_once(EXPERIMENTAL_BEIJING_DIR . '/helpers/tags.php');
+require_once EXPERIMENTAL_BEIJING_DIR . '/helpers/tags.php';
 
 /**
  * Experimental Beijing plugin main class.
@@ -47,17 +46,17 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         add_translation_source(dirname(__FILE__) . '/languages');
         foreach ($this->_translatedTexts as $tt) {
             add_filter(
-                array('Display', 'Item', 'Item Type Metadata', $tt), '__');
+                array('Display', 'Item', 'Item Type Metadata', $tt),
+                '__'
+            );
         }
     }
 
     /**
-    * If on a simple page or exhibit adjust the URL according to
-    * the convention that pages and exhibits end in '-zh_cn' on Chinese
-    * language pages.
-    *
-    * @return void
-    */
+     * If on a simple page or exhibit adjust the URL according to
+     * the convention that pages and exhibits end in '-zh_cn' on Chinese
+     * language pages.
+     */
     protected function _langRedirect()
     {
         $session = new Zend_Session_Namespace;
@@ -77,8 +76,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
                 $exhibit = get_current_record('exhibit', false);
                 if ($exhibit && ! preg_match('/-zh_cn/i', $exhibit->slug)) {
-                    $new_url = preg_replace('|(exhibits/show/)([^/.]*)|',
-                                            '\1\2-zh_cn', $cur_url);
+                    $new_url = preg_replace(
+                        '|(exhibits/show/)([^/.]*)|',
+                        '\1\2-zh_cn',
+                        $cur_url
+                    );
                 }
             }
         }
@@ -137,10 +139,16 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $itemTable = $db->getTable('Item');
 
         $its = $itemTable->getSelect();
-        $its->joinLeft(array('element_texts' => $db->ElementTexts),
-            'element_texts.record_id = items.id', '');
-        $its->joinLeft(array('elements' => $db->Elements),
-            'element_texts.element_id = elements.id', '');
+        $its->joinLeft(
+            array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id',
+            ''
+        );
+        $its->joinLeft(
+            array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id',
+            ''
+        );
 
         if ($item_type == 'Person') {
             $its->where('elements.name IN ("Creator", "Contributor")');
@@ -153,12 +161,20 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $its->where('element_texts.text = ?', $title);
 
         $dates = $db->select();
-        $dates->from(array('items' => $db->Items),
-            array('id', 'dates_created' => 'element_texts.text'));
-        $dates->joinLeft(array('element_texts' => $db->ElementTexts),
-            'element_texts.record_id = items.id', '');
-        $dates->joinLeft(array('elements' => $db->Elements),
-            'element_texts.element_id = elements.id', '');
+        $dates->from(
+            array('items' => $db->Items),
+            array('id', 'dates_created' => 'element_texts.text')
+        );
+        $dates->joinLeft(
+            array('element_texts' => $db->ElementTexts),
+            'element_texts.record_id = items.id',
+            ''
+        );
+        $dates->joinLeft(
+            array('elements' => $db->Elements),
+            'element_texts.element_id = elements.id',
+            ''
+        );
         $dates->where('elements.name = "Date Created"');
 
         $its->joinLeft(array('dates' => $dates), 'dates.id = items.id', '');
@@ -202,19 +218,27 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $person = $itemTable->getSelect();
         $person->reset('columns');
         $person->columns('id', 'items');
-        $person->joinLeft(array('name' => $db->ElementTexts),
-            'items.id = name.record_id', '');
+        $person->joinLeft(
+            array('name' => $db->ElementTexts),
+            'items.id = name.record_id',
+            ''
+        );
         $person->joinInner(
             array('et_cc' => $db->ElementText),
             "et_cc.element_id IN ({$ccIds["Creator"]}, {$ccIds["Contributor"]})
-             AND et_cc.record_type = 'Item' AND et_cc.text = name.text", '');
+             AND et_cc.record_type = 'Item' AND et_cc.text = name.text",
+            ''
+        );
         $person->where('items.id IN (?)', $itemIds);
         $person->group(array('items.id', 'et_cc.record_id'));
 
         $select = $db->select()
             ->from(array('items' => $db->Item), '');
-        $select->joinInner(array('p' => $person), 'p.id = items.id',
-            array('p.id', 'works_count' => 'COUNT(*)'));
+        $select->joinInner(
+            array('p' => $person),
+            'p.id = items.id',
+            array('p.id', 'works_count' => 'COUNT(*)')
+        );
         $select->group('id');
         $rows = $db->fetchAll($select);
 
@@ -248,7 +272,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
      * @param Array $navArray
      * @return Array
      */
-    function filterPublicNavigationItems($navArray)
+    public function filterPublicNavigationItems($navArray)
     {
         for ($i = 0; $i < count($navArray); $i++) {
             if (preg_match('|items/search$|', $navArray[$i]['uri'])) {
@@ -278,8 +302,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             foreach ($locales as $locale) {
                 $text = $et->getText();
                 $translationRecord = $translations->getTranslation(
-                    $et->record_id, $et->record_type, $et->element_id,
-                    $locale, $text
+                    $et->record_id,
+                    $et->record_type,
+                    $et->element_id,
+                    $locale,
+                    $text
                 );
                 if ($translationRecord) {
                     $translation = $translationRecord->translation;
@@ -312,7 +339,6 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
      * Order by Titles with certain html tags and characters removed.
      *
      * @param Array $args
-     * @return void
      */
     public function hookItemsBrowseSql($args)
     {
@@ -345,5 +371,4 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         return 'exact_match';
     }
-
 }
