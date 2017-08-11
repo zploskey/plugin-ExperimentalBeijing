@@ -293,7 +293,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $isEng = ebj_is_eng();
 
-        foreach ($navArray as $navLink) {
+        foreach ($navArray as $key => $navLink) {
             if (isset($navLink->label)) {
                 $label = $navLink->label;
             } else {
@@ -302,11 +302,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
             if ($isEng) {
                 if ($label === '关于') {
-                    unset($navLink);
+                    unset($navArray[$key]);
                 }
             } else {
                 if ($label === 'About') {
-                    unset($navLink);
+                    unset($navArray[$key]);
                 }
             }
         }
