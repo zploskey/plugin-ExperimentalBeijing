@@ -25,6 +25,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'items_browse_default_sort',
         'items_browse_params',
         'public_navigation_items',
+        'public_navigation_main',
         'search_element_texts',
         'search_form_default_query_type',
     );
@@ -279,6 +280,37 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
                 unset($navArray[$i]);
             }
         }
+        return $navArray;
+    }
+
+    /**
+     * Remove About links for the other language from the navigation.
+     *
+     * @param Array $navArray
+     * @return Array $navArray
+     */
+    public function filterPublicNavigationMain($navArray)
+    {
+        $isEng = ebj_is_eng();
+
+        foreach ($navArray as $navLink) {
+            if (isset($navLink->label)) {
+                $label = $navLink->label;
+            } else {
+                $label = $navLink['label'];
+            }
+
+            if ($isEng) {
+                if ($label === '关于') {
+                    unset($navLink);
+                }
+            } else {
+                if ($label === 'About') {
+                    unset($navLink);
+                }
+            }
+        }
+
         return $navArray;
     }
 
