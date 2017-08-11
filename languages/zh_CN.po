@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-10 06:13+0000\n"
+"PO-Revision-Date: 2017-08-11 04:17+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -31,10 +31,10 @@ msgstr "中国当代艺术中的性别与全球化"
 
 # Item Types
 msgid "Still Image"
-msgstr ""
+msgstr "静止图像"
 
 msgid "Moving Image"
-msgstr ""
+msgstr "移动影像"
 
 # language switch
 #: themes/experimental-beijing/common/header.php:74
@@ -156,7 +156,7 @@ msgid "Role of Contributor"
 msgstr "其他参与者角色"
 
 msgid "Cultural Context"
-msgstr "文化景况"
+msgstr "文化背景"
 
 msgid "Original Material"
 msgstr "原材"
@@ -294,26 +294,27 @@ msgstr "跨性别"
 
 # Language controlled vocabulary
 msgid "Chinese"
-msgstr ""
+msgstr "中文"
 
 msgid "English"
-msgstr ""
+msgstr "英文"
 
 msgid "Mandarin"
-msgstr ""
+msgstr "普通话"
 
 #: views/public/index/home_about.php:3
 msgid ""
 "<em>Experimental Beijing: Gender and Globalization in Chinese Contemporary\n"
-"Art</em> is a book by Sasha Su-Ling Welland, published by Duke University Press\n"
-"in 2018. Grounded in ethnographic and visual interpretation, it examines the\n"
-"interlocking power dynamics involved in Chinese contemporary art as a global\n"
-"phenomenon at the turning point of the early twenty-first century. A focus on\n"
-"gender highlights contradictions within this emerging art world and generates\n"
-"feminist sight lines onto the shifting role of art during this experimental era.\n"
-"This website, designed to complement and visually deepen the experience of\n"
-"reading the book, features expanded multimedia materials and provides readers\n"
-"with a nonlinear way to explore the image worlds it proposes."
+"Art</em> (Duke University Press, 2018) is a book by Sasha Su-Ling Welland.\n"
+"Grounded in ethnographic and visual interpretation, it explores Chinese\n"
+"contemporary art at the turn of the millennium as a zone of cultural encounter\n"
+"— between ideas of masculinity and femininity, public and private, rural and\n"
+"urban, China and the world. A feminist lens provides insight into the\n"
+"interlocking power dynamics involved in the shifting role of art during an era\n"
+"of experimentation. This digital companion, designed to complement and visually\n"
+"deepen the experience of reading the book, features expanded multimedia\n"
+"materials and provides readers with a nonlinear way to explore the image worlds\n"
+"it proposes."
 msgstr ""
 
 #: themes/experimental-beijing/collections/show.php:29
