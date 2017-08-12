@@ -20,3 +20,5 @@ demos/
 extras/documentation
 
 *.swp
+
+.php_cs.cache
