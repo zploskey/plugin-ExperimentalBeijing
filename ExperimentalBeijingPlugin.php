@@ -253,17 +253,18 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     /**
      * Change collections/show browse query to sort by Last Name.
+     * Make items/browse only show Still and Moving Images.
      *
      * @param Array $params
      * @return Array
      */
     public function filterItemsBrowseParams($params)
     {
-        if (! isset($params['collection'])) {
-            return $params;
+        if (isset($params['collection'])) {
+            $params['sort_field'] = 'Item Type Metadata,Last Name';
+        } else {
+            $params['type'] = array('Still Image', 'Moving Image');
         }
-
-        $params['sort_field'] = 'Item Type Metadata,Last Name';
         return $params;
     }
 
