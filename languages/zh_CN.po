@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-11 04:17+0000\n"
+"PO-Revision-Date: 2017-08-12 05:02+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -59,6 +59,9 @@ msgstr "人物"
 #: themes/experimental-beijing/exhibit-builder/exhibits/browse.php:2
 msgid "Chapters"
 msgstr "书本章节"
+
+msgid "About"
+msgstr "关于"
 
 # Role types
 msgid "actor"

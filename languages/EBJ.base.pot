@@ -53,6 +53,9 @@ msgstr ""
 msgid "Chapters"
 msgstr ""
 
+msgid "About"
+msgstr ""
+
 # Role types
 msgid "actor"
 msgstr ""
