@@ -25,7 +25,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'items_browse_default_sort',
         'items_browse_params',
         'public_navigation_items',
-        'public_navigation_main',
+        'public_navigation_main_all',
         'search_element_texts',
         'search_form_default_query_type',
     );
@@ -283,35 +283,26 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         return $navArray;
     }
 
-    /**
+     /**
      * Remove About links for the other language from the navigation.
      *
-     * @param Array $navArray
-     * @return Array $navArray
+     * @param Array $navPages
+     * @return Array $navPages
+     *
      */
-    public function filterPublicNavigationMain($navArray)
+    public function filterPublicNavigationMainAll($navPages)
     {
-        $isEng = ebj_is_eng();
-
-        foreach ($navArray as $key => $navLink) {
-            if (isset($navLink->label)) {
-                $label = $navLink->label;
-            } else {
-                $label = $navLink['label'];
-            }
-
-            if ($isEng) {
-                if ($label === '关于') {
-                    unset($navArray[$key]);
-                }
-            } else {
-                if ($label === 'About') {
-                    unset($navArray[$key]);
+        $locale = Zend_Registry::get('Zend_Locale');
+        if ($locale == 'zh_CN') {
+            foreach ($navPages as $key => &$page) {
+                if (isset($page->label)) {
+                    $navPages[$key]->label = __($page->label);
+                } elseif (isset($page['label'])) {
+                    $navPages[$key]['label'] = __($page['label']);
                 }
             }
         }
-
-        return $navArray;
+        return $navPages;
     }
 
     /**
