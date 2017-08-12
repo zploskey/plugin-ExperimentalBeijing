@@ -58,6 +58,7 @@ msgstr ""
 msgid "Chapters"
 msgstr ""
 
+#: themes/experimental-beijing/items/show.php:80
 msgid "About"
 msgstr ""
 
@@ -329,6 +330,10 @@ msgid "%d ITEM"
 msgid_plural "%d ITEMS"
 msgstr[0] ""
 msgstr[1] ""
+
+#: themes/experimental-beijing/items/browse.php:2
+msgid "Browse Images"
+msgstr ""
 
 #: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
