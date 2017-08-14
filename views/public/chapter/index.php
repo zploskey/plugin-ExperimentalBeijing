@@ -2,6 +2,7 @@
 $title = __('Chapters');
 echo head(array(
     'title' => $title,
+    'bodyclass' => 'chapters-index',
 ));
 ?>
 
