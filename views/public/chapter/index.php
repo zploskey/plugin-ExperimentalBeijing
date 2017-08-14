@@ -28,7 +28,7 @@ echo head(array(
         <li class="chapter-number"><?php echo __('Chapter %d', $i++); ?></li>
         <li class="chapter-name">
             <a href="<?php echo public_url('exhibits/show/xianfeng-beijing'); ?>">
-            <?php echo __('Xianfeng Beijing'); ?>
+            <?php echo __('<em>Xianfeng</em> Beijing'); ?>
             </a>
         </li>
         <li class="chapter-number"><?php echo __('Chapter %d', $i++); ?></li>
