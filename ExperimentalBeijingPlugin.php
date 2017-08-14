@@ -14,6 +14,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'initialize',
+        'define_routes',
         'items_browse_sql',
         'public_collections_show',
         'public_head',
@@ -51,6 +52,22 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
                 '__'
             );
         }
+    }
+
+    public function hookDefineRoutes($args)
+    {
+        $router = $args['router'];
+        $router->addRoute(
+            'ebj_chapters',
+            new Zend_Controller_Router_Route(
+                'chapters',
+                array(
+                    'module' => 'experimental-beijing',
+                    'controller' => 'chapter',
+                    'action' => 'index',
+                )
+            )
+        );
     }
 
     /**
