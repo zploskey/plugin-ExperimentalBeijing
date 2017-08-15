@@ -29,6 +29,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'public_navigation_main_all',
         'search_element_texts',
         'search_form_default_query_type',
+        'search_form_default_action',
     );
 
     protected $_translatedTexts = array(
@@ -280,7 +281,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     {
         if (isset($params['collection'])) {
             $params['sort_field'] = 'Item Type Metadata,Last Name';
-        } else {
+        } elseif (empty($params['query'])) {
             $params['type'] = array('Still Image', 'Moving Image');
         }
         return $params;
@@ -412,5 +413,10 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterSearchFormDefaultQueryType($type)
     {
         return 'exact_match';
+    }
+
+    public function filterSearchFormDefaultAction($url)
+    {
+        return 'items/browse';
     }
 }
