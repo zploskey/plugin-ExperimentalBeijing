@@ -116,7 +116,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             'record_type' => 'AdminImage',
             'showtitles' => 'true',
             'ids' => '6,7,15,8,14,17,9,10,11,12,13,16',
-            'limit' => 20,
+            'num' => 20,
         );
         $carousel = ShortcodeCarouselPlugin::carousel($config, $view);
         echo $carousel;
