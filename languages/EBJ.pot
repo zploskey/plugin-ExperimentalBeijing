@@ -35,15 +35,15 @@ msgid "Moving Image"
 msgstr ""
 
 # language switch
-#: themes/experimental-beijing/common/header.php:74
+#: themes/experimental-beijing/common/header.php:75
 msgid "中文"
 msgstr ""
 
-#: themes/experimental-beijing/common/header.php:73
+#: themes/experimental-beijing/common/header.php:74
 msgid "zh-CN"
 msgstr ""
 
-#: themes/experimental-beijing/common/header.php:78
+#: themes/experimental-beijing/common/header.php:79
 msgid "Menu"
 msgstr ""
 
@@ -55,11 +55,10 @@ msgid "People"
 msgstr ""
 
 #: views/public/chapter/index.php:2
-#: themes/experimental-beijing/exhibit-builder/exhibits/browse.php:2
 msgid "Chapters"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:80
+#: themes/experimental-beijing/items/show.php:94
 msgid "About"
 msgstr ""
 
@@ -185,6 +184,18 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
+msgid "Plate"
+msgstr ""
+
+msgid "Figure"
+msgstr ""
+
+msgid "Chapter"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
 # Original format
 msgid "advertisement"
 msgstr ""
@@ -274,11 +285,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:100
+#: themes/experimental-beijing/items/show.php:114
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:157
+#: themes/experimental-beijing/items/show.php:194
 msgid "Works"
 msgstr ""
 
@@ -419,18 +430,22 @@ msgid_plural "%d ITEMS"
 msgstr[0] ""
 msgstr[1] ""
 
-#: themes/experimental-beijing/items/browse.php:2
+#: themes/experimental-beijing/items/browse.php:5
 msgid "Browse Images"
 msgstr ""
 
-#: themes/experimental-beijing/items/browse.php:20
+#: themes/experimental-beijing/items/browse.php:24
 msgid "Date Created"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:130
+#: themes/experimental-beijing/items/show.php:138
+msgid "Book Reference"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:167
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:208
+#: themes/experimental-beijing/items/show.php:246
 msgid "More Info"
 msgstr ""

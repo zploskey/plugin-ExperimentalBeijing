@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-14 17:46+0000\n"
+"PO-Revision-Date: 2017-08-15 23:35+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -37,15 +37,15 @@ msgid "Moving Image"
 msgstr "移动影像"
 
 # language switch
-#: themes/experimental-beijing/common/header.php:74
+#: themes/experimental-beijing/common/header.php:75
 msgid "中文"
 msgstr "ENG"
 
-#: themes/experimental-beijing/common/header.php:73
+#: themes/experimental-beijing/common/header.php:74
 msgid "zh-CN"
 msgstr "en-US"
 
-#: themes/experimental-beijing/common/header.php:78
+#: themes/experimental-beijing/common/header.php:79
 msgid "Menu"
 msgstr "导航菜单"
 
@@ -57,11 +57,10 @@ msgid "People"
 msgstr "人物"
 
 #: views/public/chapter/index.php:2
-#: themes/experimental-beijing/exhibit-builder/exhibits/browse.php:2
 msgid "Chapters"
 msgstr "书本章节"
 
-#: themes/experimental-beijing/items/show.php:80
+#: themes/experimental-beijing/items/show.php:94
 msgid "About"
 msgstr "关于"
 
@@ -187,6 +186,18 @@ msgstr "流派"
 msgid "Gender"
 msgstr "性别"
 
+msgid "Plate"
+msgstr ""
+
+msgid "Figure"
+msgstr ""
+
+msgid "Chapter"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
 # Original format
 msgid "advertisement"
 msgstr "广告"
@@ -276,11 +287,11 @@ msgid "illustration"
 msgstr "插图"
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:100
+#: themes/experimental-beijing/items/show.php:114
 msgid "role"
 msgstr "角色"
 
-#: themes/experimental-beijing/items/show.php:157
+#: themes/experimental-beijing/items/show.php:194
 msgid "Works"
 msgstr "作品"
 
@@ -412,18 +423,22 @@ msgid "%d ITEM"
 msgid_plural "%d ITEMS"
 msgstr[0] ""
 
-#: themes/experimental-beijing/items/browse.php:2
+#: themes/experimental-beijing/items/browse.php:5
 msgid "Browse Images"
 msgstr ""
 
-#: themes/experimental-beijing/items/browse.php:20
+#: themes/experimental-beijing/items/browse.php:24
 msgid "Date Created"
 msgstr "创造日期"
 
-#: themes/experimental-beijing/items/show.php:130
+#: themes/experimental-beijing/items/show.php:138
+msgid "Book Reference"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:167
 msgid "Keywords"
 msgstr "关键字"
 
-#: themes/experimental-beijing/items/show.php:208
+#: themes/experimental-beijing/items/show.php:246
 msgid "More Info"
 msgstr "更多信息"
