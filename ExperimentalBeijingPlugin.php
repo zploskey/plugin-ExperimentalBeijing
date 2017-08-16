@@ -119,7 +119,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             'ids' => '6,7,15,8,14,17,9,10,11,12,13,16',
             'num' => 20,
         );
-        echo '</div></div>';
+        echo '</article></div>';
         $carousel = ShortcodeCarouselPlugin::carousel($config, $view);
         echo $carousel;
         echo '<div class="wrap"><article class="content" role="main" tabindex="-1">';
