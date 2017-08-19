@@ -30,6 +30,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'search_element_texts',
         'search_form_default_query_type',
         'search_form_default_action',
+        'search_form',
     );
 
     protected $_translatedTexts = array(
@@ -417,8 +418,29 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         return 'exact_match';
     }
 
-    public function filterSearchFormDefaultAction($url)
+    /**
+     * Set the default search form action to browse items using the query. The
+     * normal search results page only receives English titles and so is not
+     * easily translatable.
+     */
+    public function filterSearchFormDefaultAction($action)
     {
-        return 'items/browse';
+        if (! is_admin_theme()) {
+            $action = url('items/browse');
+        }
+        return $action;
     }
+
+    /**
+     * Change the name of the query input to search so that items/browse
+     * will function as a search page.
+     */
+    public function filterSearchForm($form, $args)
+    {
+        if (! is_admin_theme()) {
+            $form = preg_replace('/query/', 'search', $form, 1);
+        }
+        return $form;
+    }
+
 }
