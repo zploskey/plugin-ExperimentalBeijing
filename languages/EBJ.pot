@@ -58,7 +58,7 @@ msgstr ""
 msgid "Chapters"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:94
+#: themes/experimental-beijing/items/show.php:96
 msgid "About"
 msgstr ""
 
@@ -285,11 +285,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:114
+#: themes/experimental-beijing/items/show.php:116
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:194
+#: themes/experimental-beijing/items/show.php:196
 msgid "Works"
 msgstr ""
 
@@ -405,22 +405,10 @@ msgstr ""
 
 #: views/public/index/home_about.php:3
 msgid ""
-"<em>Experimental Beijing: Gender and Globalization in Chinese Contemporary\n"
-"Art</em> (Duke University Press, 2018) is a book by Sasha Su-Ling Welland.\n"
-"Grounded in ethnographic and visual interpretation, it explores Chinese\n"
-"contemporary art at the turn of the millennium as a zone of cultural "
-"encounter\n"
-"— between ideas of masculinity and femininity, public and private, rural "
-"and\n"
-"urban, China and the world. A feminist lens provides insight into the\n"
-"interlocking power dynamics involved in the shifting role of art during an "
-"era\n"
-"of experimentation. This digital companion, designed to complement and "
-"visually\n"
-"deepen the experience of reading the book, features expanded multimedia\n"
-"materials and provides readers with a nonlinear way to explore the image "
-"worlds\n"
-"it proposes."
+"This digital companion to the book <em>Experimental Beijing</em> by Sasha\n"
+"Welland explores Chinese contemporary art as a zone of cultural\n"
+"encounter—between ideas of masculinity and femininity, public and private,\n"
+"rural and urban, China and the world."
 msgstr ""
 
 #: themes/experimental-beijing/collections/show.php:29
@@ -438,14 +426,14 @@ msgstr ""
 msgid "Date Created"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:138
+#: themes/experimental-beijing/items/show.php:140
 msgid "Book Reference"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:167
+#: themes/experimental-beijing/items/show.php:169
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:246
+#: themes/experimental-beijing/items/show.php:248
 msgid "More Info"
 msgstr ""

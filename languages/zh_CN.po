@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2017-08-15 23:35+0000\n"
+"PO-Revision-Date: 2018-02-23 07:45+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "人物"
 msgid "Chapters"
 msgstr "书本章节"
 
-#: themes/experimental-beijing/items/show.php:94
+#: themes/experimental-beijing/items/show.php:96
 msgid "About"
 msgstr "关于"
 
@@ -187,16 +187,16 @@ msgid "Gender"
 msgstr "性别"
 
 msgid "Plate"
-msgstr ""
+msgstr "图版"
 
 msgid "Figure"
-msgstr ""
+msgstr "插图"
 
 msgid "Chapter"
-msgstr ""
+msgstr "章节"
 
 msgid "Page"
-msgstr ""
+msgstr "页"
 
 # Original format
 msgid "advertisement"
@@ -287,11 +287,11 @@ msgid "illustration"
 msgstr "插图"
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:114
+#: themes/experimental-beijing/items/show.php:116
 msgid "role"
 msgstr "角色"
 
-#: themes/experimental-beijing/items/show.php:194
+#: themes/experimental-beijing/items/show.php:196
 msgid "Works"
 msgstr "作品"
 
@@ -320,19 +320,19 @@ msgstr "普通话"
 
 #: views/public/chapter/index.php:13
 msgid "Prologue"
-msgstr ""
+msgstr "序幕"
 
 #: views/public/chapter/index.php:16
 msgid "Worldly Fables"
-msgstr ""
+msgstr "俗世寓言"
 
 #: views/public/chapter/index.php:19
 msgid "Introduction"
-msgstr ""
+msgstr "引言"
 
 #: views/public/chapter/index.php:22
 msgid "Chinese Art in the Expanded Field"
-msgstr ""
+msgstr "中国艺术在扩大领域"
 
 #: views/public/chapter/index.php:25
 msgid "Part I"
@@ -348,11 +348,11 @@ msgstr ""
 #: views/public/chapter/index.php:71
 #, php-format
 msgid "Chapter %d"
-msgstr ""
+msgstr "第一章%d"
 
 #: views/public/chapter/index.php:31
 msgid "<em>Xianfeng</em> Beijing"
-msgstr ""
+msgstr "<em>先锋</em>北京"
 
 #: views/public/chapter/index.php:37
 msgid "Showcase Beijing"
@@ -384,11 +384,11 @@ msgstr ""
 
 #: views/public/chapter/index.php:62
 msgid "Red Detachment"
-msgstr ""
+msgstr "红色娘子军"
 
 #: views/public/chapter/index.php:68
 msgid "Opening the Great Wall"
-msgstr ""
+msgstr "开放长城"
 
 #: views/public/chapter/index.php:74
 msgid "Camouflaged Histories"
@@ -396,49 +396,42 @@ msgstr ""
 
 #: views/public/chapter/index.php:78
 msgid "Epilogue"
-msgstr ""
+msgstr "结语"
 
 #: views/public/chapter/index.php:81
 msgid "Recursive Worldly Fables"
-msgstr ""
+msgstr "循环的俗世寓言"
 
 #: views/public/index/home_about.php:3
 msgid ""
-"<em>Experimental Beijing: Gender and Globalization in Chinese Contemporary\n"
-"Art</em> (Duke University Press, 2018) is a book by Sasha Su-Ling Welland.\n"
-"Grounded in ethnographic and visual interpretation, it explores Chinese\n"
-"contemporary art at the turn of the millennium as a zone of cultural encounter\n"
-"— between ideas of masculinity and femininity, public and private, rural and\n"
-"urban, China and the world. A feminist lens provides insight into the\n"
-"interlocking power dynamics involved in the shifting role of art during an era\n"
-"of experimentation. This digital companion, designed to complement and visually\n"
-"deepen the experience of reading the book, features expanded multimedia\n"
-"materials and provides readers with a nonlinear way to explore the image worlds\n"
-"it proposes."
+"This digital companion to the book <em>Experimental Beijing</em> by Sasha\n"
+"Welland explores Chinese contemporary art as a zone of cultural\n"
+"encounter—between ideas of masculinity and femininity, public and private,\n"
+"rural and urban, China and the world."
 msgstr ""
 
 #: themes/experimental-beijing/collections/show.php:29
 #, php-format
 msgid "%d ITEM"
 msgid_plural "%d ITEMS"
-msgstr[0] ""
+msgstr[0] "%d项目"
 
 #: themes/experimental-beijing/items/browse.php:5
 msgid "Browse Images"
-msgstr ""
+msgstr "浏览图像"
 
 #: themes/experimental-beijing/items/browse.php:24
 msgid "Date Created"
 msgstr "创造日期"
 
-#: themes/experimental-beijing/items/show.php:138
+#: themes/experimental-beijing/items/show.php:140
 msgid "Book Reference"
-msgstr ""
+msgstr "书本参照"
 
-#: themes/experimental-beijing/items/show.php:167
+#: themes/experimental-beijing/items/show.php:169
 msgid "Keywords"
 msgstr "关键字"
 
-#: themes/experimental-beijing/items/show.php:246
+#: themes/experimental-beijing/items/show.php:248
 msgid "More Info"
 msgstr "更多信息"
