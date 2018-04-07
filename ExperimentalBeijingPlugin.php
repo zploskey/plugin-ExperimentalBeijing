@@ -286,7 +286,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $figure = metadata($item, array('Item Type Metadata', 'Figure'));
         $plate = metadata($item, array('Item Type Metadata', 'Plate'));
 
-        $has_book_image = $figure == "" || $plate == "";
+        $has_book_image = $figure || $plate;
         $repl = $has_book_image ? '<div class="marker"></div>' : '';
         $repl .= '<div class="overlay"><div class="text">';
         $repl .= "<p>$title" . ($date ? " ($date)" : '') . '</p>';
