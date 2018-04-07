@@ -23,6 +23,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_filters = array(
+        'exhibit_attachment_markup',
         'items_browse_default_sort',
         'items_browse_params',
         'public_navigation_items',
@@ -271,6 +272,32 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         $args['view']->counts = $counts;
+    }
+
+    /**
+     * Add markup to exhibit items to show book locations.
+     */
+    public function filterExhibitAttachmentMarkup($html, $args)
+    {
+        $item = $args["attachment"]->Item;
+        $title = metadata($item, array('Dublin Core', 'Title'));
+        $date = metadata($item, array('Dublin Core', 'Date Created'));
+        $chapter = metadata($item, array('Item Type Metadata', 'Chapter'));
+        $figure = metadata($item, array('Item Type Metadata', 'Figure'));
+        $plate = metadata($item, array('Item Type Metadata', 'Plate'));
+        $page = metadata($item, array('Item Type Metadata', 'Page'));
+
+        $has_loc = $chapter || $figure || $plate || $page;
+        $repl = $has_loc ? '<div class="marker"></div>' : '';
+        $repl .= '<div class="overlay"><div class="text">';
+        $repl .= "<p>$title" . ($date ? " ($date)" : '') . '</p>';
+        $repl .= $chapter ? '<p>'.__('Chapter').": $chapter</p>" : '';
+        $repl .= $figure ? '<p>'.__('Figure').": $figure</p>" : '';
+        $repl .= $plate ? '<p>'.__('Plate').": $plate</p>" : '';
+        $repl .= $page ? '<p>'.__('Page').": $page</p>" : '';
+        $repl .= "</div></div></a>\n";
+        $html = preg_replace('|</a>$|', $repl, $html, 1);
+        return $html;
     }
 
     /**
