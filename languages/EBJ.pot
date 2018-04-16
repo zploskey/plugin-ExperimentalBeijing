@@ -193,6 +193,7 @@ msgstr ""
 msgid "Chapter"
 msgstr ""
 
+#: ExperimentalBeijingPlugin.php:293
 msgid "Page"
 msgstr ""
 
@@ -289,7 +290,7 @@ msgstr ""
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:196
+#: themes/experimental-beijing/items/show.php:200
 msgid "Works"
 msgstr ""
 
@@ -430,10 +431,10 @@ msgstr ""
 msgid "Book Reference"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:169
+#: themes/experimental-beijing/items/show.php:173
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:248
+#: themes/experimental-beijing/items/show.php:252
 msgid "More Info"
 msgstr ""
