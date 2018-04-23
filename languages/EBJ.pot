@@ -1,3 +1,4 @@
+# #-#-#-#-#  EBJ.pot (ExperimentalBeijing Plugin)  #-#-#-#-#
 # Translations for the Experimental Beijing plugin for Omeka.
 # Copyright (C) 2015 University of Washington
 # This file is distributed under the same license as the
@@ -7,6 +8,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
+"#-#-#-#-#  EBJ.pot (ExperimentalBeijing Plugin)  #-#-#-#-#\n"
 "Project-Id-Version: ExperimentalBeijing Plugin\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/"
 "issues\n"
@@ -18,6 +20,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  EBJ.override.pot  #-#-#-#-#\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 # Site title
 msgid "Experimental Beijing"
@@ -58,7 +62,7 @@ msgstr ""
 msgid "Chapters"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:96
+#: themes/experimental-beijing/items/show.php:106
 msgid "About"
 msgstr ""
 
@@ -286,11 +290,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:116
+#: themes/experimental-beijing/items/show.php:131
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:200
+#: themes/experimental-beijing/items/show.php:207
 msgid "Works"
 msgstr ""
 
@@ -341,12 +345,9 @@ msgstr ""
 msgid "Art Worldings"
 msgstr ""
 
-#: views/public/chapter/index.php:39
-#: views/public/chapter/index.php:45
-#: views/public/chapter/index.php:58
-#: views/public/chapter/index.php:64
-#: views/public/chapter/index.php:78
-#: views/public/chapter/index.php:84
+#: views/public/chapter/index.php:39 views/public/chapter/index.php:45
+#: views/public/chapter/index.php:58 views/public/chapter/index.php:64
+#: views/public/chapter/index.php:78 views/public/chapter/index.php:84
 #: views/public/chapter/index.php:90
 #, php-format
 msgid "Chapter %d"
@@ -423,18 +424,25 @@ msgstr[1] ""
 msgid "Browse Images"
 msgstr ""
 
-#: themes/experimental-beijing/items/browse.php:24
+#: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:140
+#: themes/experimental-beijing/items/browse.php:24
+msgid "Sort by"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:155
 msgid "Book Reference"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:173
+#: themes/experimental-beijing/items/show.php:187
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:252
+#: themes/experimental-beijing/items/show.php:259
 msgid "More Info"
 msgstr ""
+
+msgid "Credits"
+msgstr "致谢名单"

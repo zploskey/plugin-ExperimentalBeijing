@@ -1,3 +1,4 @@
+# #-#-#-#-#  EBJ.pot (ExperimentalBeijing Plugin)  #-#-#-#-#
 # Translations for the Experimental Beijing plugin for Omeka.
 # Copyright (C) 2015 University of Washington
 # This file is distributed under the same license as the
@@ -12,12 +13,13 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2018-04-15 08:40+0000\n"
-"Last-Translator: Christina Yuen Zi Chung <cyuenzi@uw.edu>\n"
+"PO-Revision-Date: 2018-04-23 22:10+0000\n"
+"Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  EBJ.override.pot  #-#-#-#-#\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
@@ -60,12 +62,9 @@ msgstr "人物"
 msgid "Chapters"
 msgstr "书本章节"
 
-#: themes/experimental-beijing/items/show.php:96
+#: themes/experimental-beijing/items/show.php:106
 msgid "About"
 msgstr "关于"
-
-msgid "Credits"
-msgstr "致谢名单"
 
 # Role types
 msgid "actor"
@@ -198,6 +197,7 @@ msgstr "插图"
 msgid "Chapter"
 msgstr "章节"
 
+#: ExperimentalBeijingPlugin.php:293
 msgid "Page"
 msgstr "页"
 
@@ -290,11 +290,11 @@ msgid "illustration"
 msgstr "插图"
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:116
+#: themes/experimental-beijing/items/show.php:131
 msgid "role"
 msgstr "角色"
 
-#: themes/experimental-beijing/items/show.php:196
+#: themes/experimental-beijing/items/show.php:207
 msgid "Works"
 msgstr "作品"
 
@@ -423,18 +423,25 @@ msgstr[0] "%d项目"
 msgid "Browse Images"
 msgstr "浏览图像"
 
-#: themes/experimental-beijing/items/browse.php:24
+#: themes/experimental-beijing/items/browse.php:20
 msgid "Date Created"
 msgstr "创造日期"
 
-#: themes/experimental-beijing/items/show.php:140
+#: themes/experimental-beijing/items/browse.php:24
+msgid "Sort by"
+msgstr "以此分类"
+
+#: themes/experimental-beijing/items/show.php:155
 msgid "Book Reference"
 msgstr "书本参照"
 
-#: themes/experimental-beijing/items/show.php:169
+#: themes/experimental-beijing/items/show.php:187
 msgid "Keywords"
 msgstr "关键字"
 
-#: themes/experimental-beijing/items/show.php:248
+#: themes/experimental-beijing/items/show.php:259
 msgid "More Info"
 msgstr "更多信息"
+
+msgid "Credits"
+msgstr "致谢名单"
