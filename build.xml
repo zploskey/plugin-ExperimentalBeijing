@@ -34,6 +34,7 @@
     <target name="update-pot" description="Update the translation template.">
         <property name="pot.file" location="${lang.dir}/EBJ.pot"/>
         <property name="pot.base" location="${lang.dir}/EBJ.base.pot"/>
+        <property name="pot.override" location="${lang.dir}/EBJ.override.pot"/>
         <tempfile property="pot.temp" suffix=".pot" destdir="${lang.dir}"/>
         <tempfile property="pot.duplicates" suffix="-duplicates.pot" destdir="${lang.dir}"/>
         <copy file="${pot.base}" tofile="${pot.temp}"/>
@@ -78,7 +79,13 @@
             <arg value="s|${omeka.dir}/||g" />
             <arg value="${pot.temp}" />
         </exec>
-        <move file="${pot.temp}" tofile="${pot.file}"/>
+        <move file="${pot.temp}" tofile="${pot.file}" />
+        <exec executable="msgcat">
+            <arg value="-o" />
+            <arg file="${pot.file}" />
+            <arg file="${pot.file}" />
+            <arg file="${pot.override}" />
+        </exec>
         <delete file="${pot.duplicates}" quiet="true" />
     </target>
 
