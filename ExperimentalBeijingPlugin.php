@@ -205,7 +205,27 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $its->group('items.id');
         $its->order('dates.dates_created ASC');
 
-        $works = $itemTable->fetchObjects($its);
+        $allWorks = $itemTable->fetchObjects($its);
+
+        if ($item_type === 'Person') {
+            $works = array();
+            $series = array();
+            foreach ($allWorks as $work) {
+                $part_of = metadata($work, array('Dublin Core', 'Is Part Of'));
+                if ($part_of) {
+                    if (isset($series[$part_of])) {
+                        $series[$part_of][] = $work;
+                    } else {
+                        $series[$part_of] = array($work);
+                    }
+                } else {
+                    $works[] = $work;
+                }
+            }
+            $view->series = $series;
+        } else {
+            $works = $allWorks;
+        }
         $view->works = $works;
     }
 
