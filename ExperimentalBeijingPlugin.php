@@ -312,7 +312,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $repl .= $embed ? '<div class="video marker"></div>' : '';
         $repl .= '<div class="overlay"><div class="text">';
         $repl .= "<p>$title" . ($date ? " ($date)" : '') . '</p>';
-        $repl .= $page ? '<p>'.__('Page')." $page</p>" : '';
+        $repl .= $page ? '<p>'.__('Page %d', $page).'</p>' : '';
         $repl .= "</div></div></a>";
         $html = preg_replace('|</a>$|', $repl, $html, 1);
         return $html;
