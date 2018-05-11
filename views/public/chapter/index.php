@@ -25,7 +25,7 @@ echo head(array(
       <li class="chapter-number"><?php echo __('Introduction'); ?></li>
       <li class="chapter-name">
         <a href="<?php echo public_url('exhibits/show/chinese-art-expanded'); ?>">
-        <?php echo __('Chinese Art in the Expanded Field'); ?>
+        <?php echo __('Chinese Contemporary Art in the Expanded Field'); ?>
         </a>
       </li>
     </ul>
