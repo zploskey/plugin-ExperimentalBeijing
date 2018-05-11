@@ -118,7 +118,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $config = array(
             'record_type' => 'AdminImage',
             'showtitles' => 'true',
-            'ids' => '6,7,15,8,14,17,9,10,11,12,13,16',
+            'ids' => '6,15,14,17,9,10,11,12,13,16',
             'num' => 20,
         );
         echo '</article></div>';
