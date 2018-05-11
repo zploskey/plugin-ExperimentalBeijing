@@ -337,87 +337,107 @@ msgstr ""
 msgid "Page %d"
 msgstr ""
 
-#: views/public/chapter/index.php:15
+#: views/public/chapter/index.php:14
 msgid "Prologue"
 msgstr ""
 
-#: views/public/chapter/index.php:18
+#: views/public/chapter/index.php:17
 msgid "Worldly Fables"
 msgstr ""
 
-#: views/public/chapter/index.php:25
+#: views/public/chapter/index.php:24
 msgid "Introduction"
 msgstr ""
 
-#: views/public/chapter/index.php:28
+#: views/public/chapter/index.php:27
 msgid "Chinese Contemporary Art in the Expanded Field"
 msgstr ""
 
-#: views/public/chapter/index.php:35
+#: views/public/chapter/index.php:34
 msgid "Part I"
 msgstr ""
 
-#: views/public/chapter/index.php:36
+#: views/public/chapter/index.php:35
 msgid "Art Worldings"
 msgstr ""
 
-#: views/public/chapter/index.php:39 views/public/chapter/index.php:45
-#: views/public/chapter/index.php:58 views/public/chapter/index.php:64
-#: views/public/chapter/index.php:78 views/public/chapter/index.php:84
-#: views/public/chapter/index.php:90
-#, php-format
-msgid "Chapter %d"
+#: views/public/chapter/index.php:38
+msgid "Chapter 1"
 msgstr ""
 
-#: views/public/chapter/index.php:42
+#: views/public/chapter/index.php:41
 msgid "<em>Xianfeng</em> Beijing"
 msgstr ""
 
-#: views/public/chapter/index.php:48
+#: views/public/chapter/index.php:44
+msgid "Chapter 2"
+msgstr ""
+
+#: views/public/chapter/index.php:47
 msgid "Showcase Beijing"
 msgstr ""
 
-#: views/public/chapter/index.php:54
+#: views/public/chapter/index.php:53
 msgid "Part II"
 msgstr ""
 
-#: views/public/chapter/index.php:55
+#: views/public/chapter/index.php:54
 msgid "Zones of Encounter"
 msgstr ""
 
-#: views/public/chapter/index.php:61
+#: views/public/chapter/index.php:57
+msgid "Chapter 3"
+msgstr ""
+
+#: views/public/chapter/index.php:60
 msgid "The Besieged City"
 msgstr ""
 
-#: views/public/chapter/index.php:67
+#: views/public/chapter/index.php:63
+msgid "Chapter 4"
+msgstr ""
+
+#: views/public/chapter/index.php:66
 msgid "The Hinterlands of Feminist Art"
 msgstr ""
 
-#: views/public/chapter/index.php:74
+#: views/public/chapter/index.php:73
 msgid "Part III"
 msgstr ""
 
-#: views/public/chapter/index.php:75
+#: views/public/chapter/index.php:74
 msgid "Feminist Sight Lines"
 msgstr ""
 
-#: views/public/chapter/index.php:81
+#: views/public/chapter/index.php:77
+msgid "Chapter 5"
+msgstr ""
+
+#: views/public/chapter/index.php:80
 msgid "Red Detachment"
 msgstr ""
 
-#: views/public/chapter/index.php:87
+#: views/public/chapter/index.php:83
+msgid "Chapter 6"
+msgstr ""
+
+#: views/public/chapter/index.php:86
 msgid "Opening the Great Wall"
 msgstr ""
 
-#: views/public/chapter/index.php:93
+#: views/public/chapter/index.php:89
+msgid "Chapter 7"
+msgstr ""
+
+#: views/public/chapter/index.php:92
 msgid "Camouflaged Histories"
 msgstr ""
 
-#: views/public/chapter/index.php:100
+#: views/public/chapter/index.php:99
 msgid "Epilogue"
 msgstr ""
 
-#: views/public/chapter/index.php:103
+#: views/public/chapter/index.php:102
 msgid "Recursive Worldly Fables"
 msgstr ""
 
