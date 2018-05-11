@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ExperimentalBeijing\n"
 "Report-Msgid-Bugs-To: http://github.com/zploskey/plugin-ExperimentalBeijing/issues\n"
 "POT-Creation-Date: 2015-07-16 15:07-0700\n"
-"PO-Revision-Date: 2018-04-23 22:10+0000\n"
+"PO-Revision-Date: 2018-05-11 16:24+0000\n"
 "Last-Translator: Zach Ploskey <zach@ploskey.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/experimentalbeijing/experimentalbeijing/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "人物"
 msgid "Chapters"
 msgstr "书本章节"
 
-#: themes/experimental-beijing/items/show.php:106
+#: themes/experimental-beijing/items/show.php:101
 msgid "About"
 msgstr "关于"
 
@@ -197,13 +197,18 @@ msgstr "性别"
 msgid "Plate"
 msgstr "图版"
 
+msgid "Plate %d"
+msgstr ""
+
 msgid "Figure"
 msgstr "插图"
+
+msgid "Figure %d"
+msgstr ""
 
 msgid "Chapter"
 msgstr "章节"
 
-#: ExperimentalBeijingPlugin.php:293
 msgid "Page"
 msgstr "页"
 
@@ -296,11 +301,11 @@ msgid "illustration"
 msgstr "插图"
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:131
+#: themes/experimental-beijing/items/show.php:126
 msgid "role"
 msgstr "角色"
 
-#: themes/experimental-beijing/items/show.php:207
+#: themes/experimental-beijing/items/show.php:243
 msgid "Works"
 msgstr "作品"
 
@@ -326,6 +331,11 @@ msgstr "英文"
 
 msgid "Mandarin"
 msgstr "普通话"
+
+#: ExperimentalBeijingPlugin.php:315
+#, php-format
+msgid "Page %d"
+msgstr ""
 
 #: views/public/chapter/index.php:15
 msgid "Prologue"
@@ -437,15 +447,19 @@ msgstr "创造日期"
 msgid "Sort by"
 msgstr "以此分类"
 
-#: themes/experimental-beijing/items/show.php:155
+#: themes/experimental-beijing/items/show.php:150
 msgid "Book Reference"
 msgstr "书本参照"
 
-#: themes/experimental-beijing/items/show.php:187
+#: themes/experimental-beijing/items/show.php:186
 msgid "Keywords"
 msgstr "关键字"
 
-#: themes/experimental-beijing/items/show.php:259
+#: themes/experimental-beijing/items/show.php:205
+msgid "Series"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:295
 msgid "More Info"
 msgstr "更多信息"
 

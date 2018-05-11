@@ -197,7 +197,13 @@ msgstr ""
 msgid "Plate"
 msgstr ""
 
+msgid "Plate %d"
+msgstr ""
+
 msgid "Figure"
+msgstr ""
+
+msgid "Figure %d"
 msgstr ""
 
 msgid "Chapter"
