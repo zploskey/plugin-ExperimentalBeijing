@@ -62,7 +62,7 @@ msgstr ""
 msgid "Chapters"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:106
+#: themes/experimental-beijing/items/show.php:101
 msgid "About"
 msgstr ""
 
@@ -155,6 +155,12 @@ msgstr ""
 msgid "Death Date"
 msgstr ""
 
+msgid "First Name"
+msgstr ""
+
+msgid "Last Name"
+msgstr ""
+
 msgid "Role of Creator"
 msgstr ""
 
@@ -197,7 +203,6 @@ msgstr ""
 msgid "Chapter"
 msgstr ""
 
-#: ExperimentalBeijingPlugin.php:293
 msgid "Page"
 msgstr ""
 
@@ -290,11 +295,11 @@ msgid "illustration"
 msgstr ""
 
 # theme strings
-#: themes/experimental-beijing/items/show.php:131
+#: themes/experimental-beijing/items/show.php:126
 msgid "role"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:207
+#: themes/experimental-beijing/items/show.php:243
 msgid "Works"
 msgstr ""
 
@@ -321,6 +326,11 @@ msgstr ""
 msgid "Mandarin"
 msgstr ""
 
+#: ExperimentalBeijingPlugin.php:315
+#, php-format
+msgid "Page %d"
+msgstr ""
+
 #: views/public/chapter/index.php:15
 msgid "Prologue"
 msgstr ""
@@ -334,7 +344,7 @@ msgid "Introduction"
 msgstr ""
 
 #: views/public/chapter/index.php:28
-msgid "Chinese Art in the Expanded Field"
+msgid "Chinese Contemporary Art in the Expanded Field"
 msgstr ""
 
 #: views/public/chapter/index.php:35
@@ -432,15 +442,19 @@ msgstr ""
 msgid "Sort by"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:155
+#: themes/experimental-beijing/items/show.php:150
 msgid "Book Reference"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:187
+#: themes/experimental-beijing/items/show.php:186
 msgid "Keywords"
 msgstr ""
 
-#: themes/experimental-beijing/items/show.php:259
+#: themes/experimental-beijing/items/show.php:205
+msgid "Series"
+msgstr ""
+
+#: themes/experimental-beijing/items/show.php:295
 msgid "More Info"
 msgstr ""
 

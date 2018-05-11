@@ -146,6 +146,12 @@ msgstr ""
 msgid "Death Date"
 msgstr ""
 
+msgid "First Name"
+msgstr ""
+
+msgid "Last Name"
+msgstr ""
+
 msgid "Role of Creator"
 msgstr ""
 

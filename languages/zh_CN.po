@@ -155,6 +155,12 @@ msgstr "策划人"
 msgid "Death Date"
 msgstr "去世日期"
 
+msgid "First Name"
+msgstr "名"
+
+msgid "Last Name"
+msgstr "姓"
+
 msgid "Role of Creator"
 msgstr "创造者角色"
 
@@ -334,8 +340,8 @@ msgid "Introduction"
 msgstr "引言"
 
 #: views/public/chapter/index.php:28
-msgid "Chinese Art in the Expanded Field"
-msgstr "中国艺术在扩大领域"
+msgid "Chinese Contemporary Art in the Expanded Field"
+msgstr "中国当代艺术在扩大领域"
 
 #: views/public/chapter/index.php:35
 msgid "Part I"
@@ -351,11 +357,11 @@ msgstr ""
 #: views/public/chapter/index.php:90
 #, php-format
 msgid "Chapter %d"
-msgstr "第一章%d"
+msgstr "第%d章"
 
 #: views/public/chapter/index.php:42
 msgid "<em>Xianfeng</em> Beijing"
-msgstr "<em>先锋</em>北京"
+msgstr "先锋北京"
 
 #: views/public/chapter/index.php:48
 msgid "Showcase Beijing"
