@@ -213,11 +213,11 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
             foreach ($allWorks as $work) {
                 $part_of = metadata($work, array('Dublin Core', 'Is Part Of'));
                 if ($part_of) {
-                    if (isset($series[$part_of])) {
-                        $series[$part_of][] = $work;
-                    } else {
-                        $series[$part_of] = array($work);
-                    }
+                    continue;
+                }
+                $work_type = $work->getProperty('item_type_name');
+                if ($work_type === 'Series') {
+                    $series[] = $work;
                 } else {
                     $works[] = $work;
                 }
