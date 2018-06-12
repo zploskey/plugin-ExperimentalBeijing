@@ -47,7 +47,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_previousItem;
     protected $_nextItem;
-    protected $_fetchedAdjascent = false;
+    protected $_fetchedAdjacent = false;
 
     /**
      * Initialize translations.
@@ -324,7 +324,7 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         return $html;
     }
 
-    protected function _fetchAdjascentItems(Exhibit $exhibit, Item $item)
+    protected function _fetchAdjacentItems(Exhibit $exhibit, Item $item)
     {
         $db = $this->_db;
 
@@ -346,31 +346,31 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
                 AND eba.order IN ($prev_order, $next_order)
                 ORDER BY eba.order ASC";
 
-        $adjascent = $db->getTable('Item')->fetchObjects($sql);
+        $adjacent = $db->getTable('Item')->fetchObjects($sql);
 
-        switch (count($adjascent)) {
+        switch (count($adjacent)) {
         case 2:
-            $this->_previousItem = $adjascent[0];
-            $this->_nextItem = $adjascent[1];
+            $this->_previousItem = $adjacent[0];
+            $this->_nextItem = $adjacent[1];
             break;
         case 1:
             if ($prev_order === 0) {
-                $this->_nextItem = $adjascent[0];
+                $this->_nextItem = $adjacent[0];
             } else {
-                $this->_previousItem = $adjascent[0];
+                $this->_previousItem = $adjacent[0];
             }
             break;
         case 0:
             break;
         }
 
-        $this->_fetchedAdjascent = true;
+        $this->_fetchedAdjacent = true;
     }
 
     protected function _getPreviousItem($exhibit, $item)
     {
-        if (!$this->_fetchedAdjascent) {
-            $this->_fetchAdjascentItems($exhibit, $item);
+        if (!$this->_fetchedAdjacent) {
+            $this->_fetchAdjacentItems($exhibit, $item);
         }
         return $this->_previousItem;
     }
@@ -387,8 +387,8 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected function _getNextItem($exhibit, $item)
     {
-        if (!$this->_fetchedAdjascent) {
-            $this->_fetchAdjascentItems($exhibit, $item);
+        if (!$this->_fetchedAdjacent) {
+            $this->_fetchAdjacentItems($exhibit, $item);
         }
         return $this->_nextItem;
     }
