@@ -24,6 +24,8 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'exhibit_attachment_markup',
+        'item_next',
+        'item_previous',
         'items_browse_default_sort',
         'items_browse_params',
         'public_navigation_items',
@@ -42,6 +44,10 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         'Role of Creator',
         'Role of Contributor',
     );
+
+    protected $_previousItem;
+    protected $_nextItem;
+    protected $_fetchedAdjascent = false;
 
     /**
      * Initialize translations.
@@ -316,6 +322,85 @@ class ExperimentalBeijingPlugin extends Omeka_Plugin_AbstractPlugin
         $repl .= "</div></div></a>";
         $html = preg_replace('|</a>$|', $repl, $html, 1);
         return $html;
+    }
+
+    protected function _fetchAdjascentItems(Exhibit $exhibit, Item $item)
+    {
+        $db = $this->_db;
+
+        // get block attachment for the current item
+        $sql = "SELECT eba.* FROM $db->ExhibitBlockAttachment eba
+                INNER JOIN $db->ExhibitPageBlock epb ON epb.id = eba.block_id
+                INNER JOIN $db->ExhibitPage ep ON ep.id = epb.page_id
+                INNER JOIN $db->Exhibit e ON e.id = ep.exhibit_id
+                WHERE e.id = $exhibit->id AND eba.item_id = $item->id";
+
+        $curEba = $db->getTable('ExhibitBlockAttachment')->fetchObject($sql);
+
+        $prev_order = $curEba->order - 1;
+        $next_order = $curEba->order + 1;
+
+        $sql = "SELECT i.* FROM $db->Item i
+                INNER JOIN $db->ExhibitBlockAttachment eba ON eba.item_id = i.id
+                WHERE eba.block_id = $curEba->block_id
+                AND eba.order IN ($prev_order, $next_order)
+                ORDER BY eba.order ASC";
+
+        $adjascent = $db->getTable('Item')->fetchObjects($sql);
+
+        switch (count($adjascent)) {
+        case 2:
+            $this->_previousItem = $adjascent[0];
+            $this->_nextItem = $adjascent[1];
+            break;
+        case 1:
+            if ($prev_order === 0) {
+                $this->_nextItem = $adjascent[0];
+            } else {
+                $this->_previousItem = $adjascent[0];
+            }
+            break;
+        case 0:
+            break;
+        }
+
+        $this->_fetchedAdjascent = true;
+    }
+
+    protected function _getPreviousItem($exhibit, $item)
+    {
+        if (!$this->_fetchedAdjascent) {
+            $this->_fetchAdjascentItems($exhibit, $item);
+        }
+        return $this->_previousItem;
+    }
+
+    /** Get previous item by its order in the image gallery. */
+    public function filterItemPrevious($itemPrevious, $params)
+    {
+        $view = get_view();
+        if (isset($view->exhibit)) {
+            return $this->_getPreviousItem($view->exhibit, $params['item']);
+        }
+        return false;
+    }
+
+    protected function _getNextItem($exhibit, $item)
+    {
+        if (!$this->_fetchedAdjascent) {
+            $this->_fetchAdjascentItems($exhibit, $item);
+        }
+        return $this->_nextItem;
+    }
+
+    /** Get next item by its order in the image gallery. */
+    public function filterItemNext($itemNext, $params)
+    {
+        $view = get_view();
+        if (isset($view->exhibit)) {
+            return $this->_getNextItem($view->exhibit, $params['item']);
+        }
+        return array();
     }
 
     /**
